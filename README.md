@@ -1,5 +1,7 @@
 # Sahil — Portfolio (React + Vite + Tailwind CSS)
 
+🌐 **Live Website:** [https://cgcian-sahil.netlify.app/](https://cgcian-sahil.netlify.app/)
+
 Personal portfolio of **Sahil** (Final-Year BCA student at Chandigarh Group of Colleges, Landran, Mohali — 8.09 CGPA), showcasing Data Analytics, Power BI Dashboards, AI & n8n Workflow Automation, and Full-Stack Web Development.
 
 ## Quick Start
