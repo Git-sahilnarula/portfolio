@@ -52,7 +52,7 @@ export default function Education({ education }) {
                         isReversed ? 'md:pr-12 md:order-first' : 'md:pl-12'
                       }`}
                     >
-                      <div className="bg-gray-50 dark:bg-slate-800 p-6 rounded-xl shadow-md border border-slate-200 dark:border-slate-700">
+                      <div className="hover-card bg-gray-50 dark:bg-slate-800 p-6 rounded-xl shadow-md border border-slate-200 dark:border-slate-700">
                         <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300 text-sm">
                           {item.points.map((point, i) => (
                             <li key={i}>{point}</li>

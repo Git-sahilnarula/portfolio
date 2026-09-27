@@ -112,7 +112,7 @@ export default function Certifications({
           {mergedCerts.map((cert) => (
             <div
               key={cert.title}
-              className="bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-slate-200 dark:border-slate-700 flex flex-col justify-between p-6 animate-fade-in"
+              className="hover-card group bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md overflow-hidden border border-slate-200 dark:border-slate-700 flex flex-col justify-between p-6 animate-fade-in"
             >
               <div>
                 <div className="flex items-center mb-4">

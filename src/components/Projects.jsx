@@ -245,7 +245,7 @@ export default function Projects({
               {experienceAndAchievements.map((exp) => (
                 <div
                   key={exp.role}
-                  className="bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
+                  className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                     <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-100">

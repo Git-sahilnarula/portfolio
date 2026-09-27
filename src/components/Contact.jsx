@@ -137,9 +137,12 @@ export default function Contact({ personal }) {
           <div className="animate-fade-in">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactItems.map((item) => (
-                <div key={item.label} className="flex items-start">
+                <div
+                  key={item.label}
+                  className="hover-card flex items-start p-4 rounded-xl bg-gray-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm"
+                >
                   <div className="p-3 bg-slate-200/80 dark:bg-slate-700 rounded-lg mr-4">
                     <i
                       className={`${item.icon} text-blue-600 dark:text-blue-300`}
@@ -176,7 +179,7 @@ export default function Contact({ personal }) {
                     rel="noreferrer"
                     aria-label={social.name}
                     title={social.name}
-                    className="w-10 h-10 flex items-center justify-center bg-gray-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:bg-slate-200/70 dark:hover:bg-slate-700 transition"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:-translate-y-1 hover:bg-slate-200/70 dark:hover:bg-slate-700 transition-all duration-200"
                   >
                     <i
                       className={`${social.icon} text-gray-800 dark:text-gray-200`}
@@ -193,7 +196,7 @@ export default function Contact({ personal }) {
               name="portfolio-contact"
               data-netlify="true"
               onSubmit={handleSubmit}
-              className="bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
+              className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
             >
               <input type="hidden" name="form-name" value="portfolio-contact" />
 

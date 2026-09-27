@@ -44,7 +44,7 @@ export default function Skills({ skills, linkedinSync }) {
           {progressGroups.map((group) => (
             <div
               key={group.title}
-              className="animate-fade-in bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
+              className="hover-card animate-fade-in bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
             >
               <div className="flex items-center mb-5">
                 <div className="p-3 bg-slate-200/80 dark:bg-slate-700 rounded-lg mr-4">
@@ -79,7 +79,7 @@ export default function Skills({ skills, linkedinSync }) {
           ))}
 
           {/* Card 3: Core CS, Interpersonal & Leadership Bullets */}
-          <div className="animate-fade-in bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
+          <div className="hover-card animate-fade-in bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700 flex flex-col justify-between">
             <div>
               <div className="flex items-center mb-5">
                 <div className="p-3 bg-slate-200/80 dark:bg-slate-700 rounded-lg mr-4">
@@ -120,7 +120,7 @@ export default function Skills({ skills, linkedinSync }) {
 
         {/* Compact Category Dropdown + Scroll-Wheel Skills Directory */}
         {allSkills.length > 0 && (
-          <div className="mt-10 bg-gray-50 dark:bg-slate-800 rounded-2xl shadow-md p-5 md:p-6 border border-slate-200 dark:border-slate-700 animate-fade-in">
+          <div className="hover-card mt-10 bg-gray-50 dark:bg-slate-800 rounded-2xl shadow-md p-5 md:p-6 border border-slate-200 dark:border-slate-700 animate-fade-in">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 bg-slate-200/80 dark:bg-slate-700 rounded-lg">
@@ -184,7 +184,7 @@ export default function Skills({ skills, linkedinSync }) {
                 {filteredSkills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 hover:border-slate-500 transition flex items-start justify-between gap-2"
+                    className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 hover:-translate-y-0.5 hover:shadow-md hover:border-slate-800 dark:hover:border-slate-300 transition-all duration-200 flex items-start justify-between gap-2"
                   >
                     <div>
                       <div className="flex items-center gap-1.5">

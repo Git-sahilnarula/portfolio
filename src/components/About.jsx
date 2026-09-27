@@ -79,7 +79,7 @@ export default function About({ about, personal, linkedinSync }) {
 
             {/* Hackathons, Honors & Campus Leadership */}
             {about.leadershipAndHonors && (
-              <div className="bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-5 border border-slate-200 dark:border-slate-700">
+              <div className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-5 border border-slate-200 dark:border-slate-700">
                 <h4 className="text-base font-semibold mb-3 flex items-center">
                   <i className="fas fa-medal text-blue-600 dark:text-blue-300 mr-2"></i>
                   Honors, Hackathons & Leadership
@@ -108,7 +108,7 @@ export default function About({ about, personal, linkedinSync }) {
           {/* Right Column: LinkedIn & GitHub Profile Cards */}
           <div className="animate-fade-in space-y-6">
             {/* LinkedIn Card */}
-            <div className="bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700">
+            <div className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold flex items-center">
                   <i className="fab fa-linkedin text-blue-600 dark:text-blue-300 mr-2 text-2xl"></i>
@@ -159,7 +159,7 @@ export default function About({ about, personal, linkedinSync }) {
             </div>
 
             {/* GitHub Profile & Contribution Graph Card */}
-            <div className="bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700">
+            <div className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold flex items-center">
                   <i className="fab fa-github mr-2 text-2xl"></i>
