@@ -57,6 +57,13 @@ async function main() {
 
   const args = process.argv.slice(2);
 
+  // 0. CLI Flag: --headline "<New LinkedIn Headline>"
+  const newHeadline = getArgValue(args, '--headline');
+  if (newHeadline) {
+    currentData.headline = newHeadline;
+    console.log(`Updated LinkedIn headline: "${newHeadline}"`);
+  }
+
   // 1. CLI Flag: --add-skill "<Skill Name>" [--category "<Category>"]
   const newSkillName = getArgValue(args, '--add-skill');
   if (newSkillName) {

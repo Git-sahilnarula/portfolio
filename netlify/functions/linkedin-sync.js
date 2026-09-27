@@ -78,6 +78,7 @@ export async function handler() {
           body: JSON.stringify({
             source: 'proxycurl-live',
             lastSynced: new Date().toISOString(),
+            headline: data.headline || null,
             linkedinSkills: normalizeSkills(data.skills),
             linkedinCertifications: normalizeCerts(data.certifications),
           }),
@@ -110,6 +111,7 @@ export async function handler() {
             body: JSON.stringify({
               source: 'apify-live',
               lastSynced: new Date().toISOString(),
+              headline: profile.headline || null,
               linkedinSkills: normalizeSkills(profile.skills),
               linkedinCertifications: normalizeCerts(certsRaw),
             }),

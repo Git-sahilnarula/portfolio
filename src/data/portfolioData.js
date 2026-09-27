@@ -160,6 +160,7 @@ export const portfolioData = {
     {
       name: 'uber-analysis-project',
       title: 'Uber Ride Bookings Data Analysis (NCR Region — 150K+ Rows)',
+      phase: 'Completed',
       description:
         'End-to-end data analytics & BI pipeline analyzing 150,000+ ride bookings across Delhi NCR (₹52M revenue). Built with Python (Pandas) for automated ETL & feature engineering, SQLite3 for relational modeling, and a 5-page Power BI executive dashboard.',
       language: 'Python • SQLite3 • Power BI',
@@ -173,6 +174,7 @@ export const portfolioData = {
     {
       name: 'outreach-iq',
       title: 'Outreach IQ — AI Job Discovery & Multi-Channel Outreach Platform',
+      phase: 'Completed',
       description:
         'Production-grade full-stack platform (FastAPI + React 18 + TypeScript) for startups to ingest opportunities via Gmail OAuth & n8n webhooks, score compatibility with local LLMs (Ollama), generate tailored proposals & LinkedIn Outreach Kits, and dispatch with human-in-the-loop approval.',
       language: 'FastAPI • React • TypeScript • Ollama',
@@ -192,6 +194,7 @@ export const portfolioData = {
     {
       name: 'kairos',
       title: 'KAIROS — Agentic AI Opportunity Research & Decision Engine',
+      phase: 'In Development',
       description:
         'Zero-cost, n8n-orchestrated AI agent system (12 modular workflows) backed by PostgreSQL + pgvector RAG precedent reasoning and Ollama. Evaluates freelance/remote opportunities with explainable, deterministic weighted scoring and human-in-the-loop governance.',
       language: 'n8n • PostgreSQL/pgvector • RAG',
@@ -206,6 +209,26 @@ export const portfolioData = {
       stars: 1,
       html_url: 'https://github.com/Git-sahilnarula/kairos',
       badge: 'BCA Final-Year Major Project',
+    },
+    {
+      name: 'portfolio',
+      title: 'Personal Developer & Data Analytics Portfolio',
+      phase: 'Completed',
+      description:
+        'Modern responsive portfolio built with React 18, Vite, and Tailwind CSS featuring live GitHub repository & skill discovery, LinkedIn headline/certification syncing, interactive scroll-wheel skills directory, and 3-tier direct email delivery.',
+      language: 'React 18 • Vite • Tailwind CSS',
+      tags: [
+        'React 18',
+        'Vite',
+        'Tailwind CSS',
+        'Netlify Functions',
+        'GitHub API',
+        'Responsive UI',
+      ],
+      stars: 1,
+      html_url: 'https://github.com/Git-sahilnarula/portfolio',
+      homepage: 'https://cgcian-sahil.netlify.app/',
+      badge: 'Live Web Application',
     },
   ],
 

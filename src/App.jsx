@@ -2,10 +2,11 @@
  * App.jsx — Root Portfolio Component
  *
  * Responsibilities:
- * 1. Manages Light / Dark theme state persisted in localStorage.
- * 2. Loads skills & certifications from `/linkedin-profile.json` (and optional Netlify live sync).
+ * 1. Manages Light (#f5f2eb) / Dark (#222222) theme state persisted in localStorage.
+ * 2. Loads LinkedIn headline, skills & certifications from `/linkedin-profile.json`
+ *    and merges live updates from `/.netlify/functions/linkedin-sync`.
  * 3. Appends newly discovered GitHub repository languages/topics into the skills directory.
- * 4. Renders all portfolio sections in order.
+ * 4. Renders all portfolio sections with synced LinkedIn & GitHub data.
  */
 
 import { useCallback, useEffect, useState } from 'react';
@@ -28,7 +29,10 @@ function mergeUniqueByField(baseList = [], incomingList = [], field = 'name') {
   const merged = [...baseList];
   for (const item of incomingList) {
     const val = (item?.[field] || '').toLowerCase();
-    if (val && !merged.some((existing) => (existing?.[field] || '').toLowerCase() === val)) {
+    if (
+      val &&
+      !merged.some((existing) => (existing?.[field] || '').toLowerCase() === val)
+    ) {
       merged.unshift(item);
     }
   }
@@ -48,11 +52,11 @@ export default function App() {
     localStorage.setItem('portfolio_theme_charcoal', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
-  // Fetch synced skills & certifications on mount
+  // Fetch synced LinkedIn headline, skills & certifications on mount
   useEffect(() => {
     let isMounted = true;
 
-    async function loadSkillsAndCerts() {
+    async function loadLinkedInData() {
       try {
         const localRes = await fetch(`/linkedin-profile.json?t=${Date.now()}`);
         const baseData = localRes.ok ? await localRes.json() : {};
@@ -62,6 +66,13 @@ export default function App() {
           const liveRes = await fetch('/.netlify/functions/linkedin-sync');
           if (liveRes.ok) {
             const liveData = await liveRes.json();
+
+            // Sync live LinkedIn headline if returned by serverless function
+            if (liveData.headline) {
+              baseData.headline = liveData.headline;
+            }
+
+            // Merge live LinkedIn skills & certifications
             baseData.linkedinSkills = mergeUniqueByField(
               baseData.linkedinSkills,
               liveData.linkedinSkills,
@@ -83,7 +94,7 @@ export default function App() {
       }
     }
 
-    loadSkillsAndCerts();
+    loadLinkedInData();
     return () => {
       isMounted = false;
     };
@@ -136,9 +147,19 @@ export default function App() {
       />
 
       <main>
-        <Hero personal={portfolioData.personal} />
-        <About about={portfolioData.about} personal={portfolioData.personal} />
-        <Skills skills={portfolioData.skills} linkedinSync={linkedinSync} />
+        <Hero
+          personal={portfolioData.personal}
+          linkedinSync={linkedinSync}
+        />
+        <About
+          about={portfolioData.about}
+          personal={portfolioData.personal}
+          linkedinSync={linkedinSync}
+        />
+        <Skills
+          skills={portfolioData.skills}
+          linkedinSync={linkedinSync}
+        />
         <Projects
           featuredProjects={portfolioData.featuredProjects}
           experienceAndAchievements={portfolioData.experienceAndAchievements}

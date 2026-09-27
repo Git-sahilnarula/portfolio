@@ -10,12 +10,14 @@
 
 import { useEffect, useState } from 'react';
 
-export default function About({ about, personal }) {
+export default function About({ about, personal, linkedinSync }) {
+  const syncedHeadline = linkedinSync?.headline || personal.headline;
+
   // Default fallback stats used if GitHub API is offline or rate-limited
   const [githubProfile, setGithubProfile] = useState({
     avatar_url: `https://github.com/${personal.githubUsername}.png`,
     name: personal.name,
-    bio: 'Final-Year BCA @ CGC Landran | Data Analytics, AI & Web Dev',
+    bio: syncedHeadline,
     followers: 3,
     following: 3,
     public_repos: 3,
@@ -29,7 +31,7 @@ export default function About({ about, personal }) {
         setGithubProfile((prev) => ({
           avatar_url: data.avatar_url || prev.avatar_url,
           name: personal.name,
-          bio: data.bio || prev.bio,
+          bio: data.bio || syncedHeadline,
           followers: data.followers ?? prev.followers,
           following: data.following ?? prev.following,
           public_repos: data.public_repos ?? prev.public_repos,
@@ -38,7 +40,7 @@ export default function About({ about, personal }) {
       .catch(() => {
         // Keep initial fallback state when offline
       });
-  }, [personal.githubUsername, personal.name]);
+  }, [personal.githubUsername, personal.name, syncedHeadline]);
 
   return (
     <section
@@ -126,7 +128,7 @@ export default function About({ about, personal }) {
                 <div>
                   <h4 className="font-semibold text-lg">{personal.name}</h4>
                   <p className="text-gray-600 dark:text-gray-300 text-xs md:text-sm">
-                    {personal.headline}
+                    {syncedHeadline}
                   </p>
                   <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                     <i className="fas fa-university mr-1"></i> Chandigarh Group

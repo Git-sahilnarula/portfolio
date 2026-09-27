@@ -4,7 +4,7 @@
  * Features:
  * 1. Fetches public non-fork repositories from `https://api.github.com/users/{githubUsername}/repos`.
  * 2. Merges live GitHub metadata (stars, URLs, topics, newly created repos) with curated
- *    `featuredProjects` descriptions and Power BI PDF report links.
+ *    `featuredProjects` descriptions, project phases (`Completed` vs `In Development`), and PDF reports.
  * 3. Reports any newly discovered repository languages/topics back to `App.jsx` via
  *    `onRepoSkillsDiscovered` so they automatically appear in the Skills Directory.
  * 4. Renders the Industrial Training & Virtual Experience cards (SortIQ & Deloitte).
@@ -43,9 +43,9 @@ export default function Projects({
 
         const discoveredSkills = [];
 
-        // Map non-fork GitHub repos (excluding this portfolio repo itself) and enrich with curated metadata
+        // Map non-fork GitHub repos and enrich with curated metadata & project phase
         const merged = repos
-          .filter((repo) => !repo.fork && repo.name.toLowerCase() !== 'portfolio')
+          .filter((repo) => !repo.fork)
           .map((repo) => {
             const curated = featuredProjects.find(
               (fp) => fp.name.toLowerCase() === repo.name.toLowerCase()
@@ -67,6 +67,7 @@ export default function Projects({
             return {
               name: repo.name,
               title: curated?.title || formatRepoTitle(repo.name),
+              phase: curated?.phase || 'Completed',
               description:
                 curated?.description ||
                 repo.description ||
@@ -82,7 +83,7 @@ export default function Projects({
             };
           });
 
-        // Append any curated projects not yet pushed to GitHub
+        // Append any curated projects not yet returned by GitHub API
         for (const fp of featuredProjects) {
           if (!merged.some((m) => m.name.toLowerCase() === fp.name.toLowerCase())) {
             merged.push(fp);
@@ -117,94 +118,121 @@ export default function Projects({
         </h2>
         <div className="w-20 h-1 bg-blue-600 dark:bg-blue-300 mx-auto mb-12"></div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.name}
-              className="project-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700 flex flex-col justify-between animate-fade-in"
-            >
-              <div>
-                {/* Top Badge & GitHub Star Count */}
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-slate-200/90 text-slate-800 dark:bg-slate-700 dark:text-slate-200">
-                    {project.badge || 'Project'}
-                  </span>
-                  <span className="px-2 py-1 bg-slate-200/70 dark:bg-slate-700 rounded text-gray-800 dark:text-gray-200 text-xs">
-                    <i className="fas fa-star text-amber-500 mr-1"></i>
-                    {project.stars}
-                  </span>
+        {/* Projects Grid (2 columns on desktop for 4 balanced cards) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project) => {
+            const isInDev =
+              (project.phase || '').toLowerCase() === 'in development';
+
+            return (
+              <div
+                key={project.name}
+                className="project-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700 flex flex-col justify-between animate-fade-in"
+              >
+                <div>
+                  {/* Top Row: Category Badge, Project Phase Pill & Star Count */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <span className="px-2.5 py-1 text-xs font-semibold rounded-full bg-slate-200/90 text-slate-800 dark:bg-slate-700 dark:text-slate-200">
+                      {project.badge || 'Project'}
+                    </span>
+
+                    <div className="flex items-center gap-2">
+                      {/* Project Phase Badge (Completed vs In Development) */}
+                      <span
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${
+                          isInDev
+                            ? 'bg-amber-100/90 text-amber-900 border-amber-300 dark:bg-amber-900/40 dark:text-amber-200 dark:border-amber-700/70'
+                            : 'bg-slate-800 text-slate-50 border-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:border-slate-100'
+                        }`}
+                      >
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            isInDev
+                              ? 'bg-amber-600 dark:bg-amber-400 animate-ping'
+                              : 'bg-slate-50 dark:bg-slate-900'
+                          }`}
+                        ></span>
+                        {project.phase || 'Completed'}
+                      </span>
+
+                      <span className="px-2 py-1 bg-slate-200/70 dark:bg-slate-700 rounded text-gray-800 dark:text-gray-200 text-xs">
+                        <i className="fas fa-star text-amber-500 mr-1"></i>
+                        {project.stars}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Project Title & Description */}
+                  <h3 className="text-xl font-semibold mb-2">
+                    <a
+                      href={project.html_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline text-slate-800 dark:text-slate-100"
+                    >
+                      {project.title}
+                    </a>
+                  </h3>
+
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
 
-                {/* Project Title & Description */}
-                <h3 className="text-xl font-semibold mb-2">
-                  <a
-                    href={project.html_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:underline text-slate-800 dark:text-slate-100"
-                  >
-                    {project.title}
-                  </a>
-                </h3>
-
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
-
-              {/* Tech Stack Tags & External Links */}
-              <div>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {(project.tags?.length ? project.tags : [project.language]).map(
-                    (tag) => (
+                {/* Tech Stack Tags & External Links */}
+                <div>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {(project.tags?.length
+                      ? project.tags
+                      : [project.language]
+                    ).map((tag) => (
                       <span
                         key={tag}
                         className="px-2.5 py-1 bg-slate-200/75 dark:bg-slate-700 rounded text-slate-800 dark:text-slate-200 text-xs font-medium"
                       >
                         {tag}
                       </span>
-                    )
-                  )}
-                </div>
+                    ))}
+                  </div>
 
-                <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-slate-200 dark:border-slate-700">
-                  <a
-                    href={project.html_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center text-blue-600 dark:text-blue-300 hover:underline text-sm font-medium"
-                  >
-                    View on GitHub{' '}
-                    <i className="fas fa-external-link-alt ml-1.5 text-xs"></i>
-                  </a>
-
-                  {project.homepage && (
+                  <div className="flex flex-wrap items-center gap-4 pt-3 border-t border-slate-200 dark:border-slate-700">
                     <a
-                      href={project.homepage}
+                      href={project.html_url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:underline text-xs font-medium"
+                      className="inline-flex items-center text-blue-600 dark:text-blue-300 hover:underline text-sm font-medium"
                     >
-                      <i className="fas fa-globe mr-1"></i> Live Demo
+                      View on GitHub{' '}
+                      <i className="fas fa-external-link-alt ml-1.5 text-xs"></i>
                     </a>
-                  )}
 
-                  {project.reportUrl && (
-                    <a
-                      href={project.reportUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:underline text-xs font-medium"
-                    >
-                      <i className="fas fa-file-pdf mr-1"></i>
-                      {project.reportLabel || 'View Report'}
-                    </a>
-                  )}
+                    {project.homepage && (
+                      <a
+                        href={project.homepage}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:underline text-xs font-medium"
+                      >
+                        <i className="fas fa-globe mr-1"></i> Live Demo
+                      </a>
+                    )}
+
+                    {project.reportUrl && (
+                      <a
+                        href={project.reportUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center text-gray-700 dark:text-gray-300 hover:underline text-xs font-medium"
+                      >
+                        <i className="fas fa-file-pdf mr-1"></i>
+                        {project.reportLabel || 'View Report'}
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Industrial Training & Virtual Experience Cards */}
