@@ -2,7 +2,7 @@
   "linkedinHandle": "sahilnarula06skn",
   "linkedinUrl": "https://www.linkedin.com/in/sahilnarula06skn/",
   "githubUsername": "Git-sahilnarula",
-  "lastSynced": "2026-09-27T10:24:00+05:30",
+  "lastSynced": "2026-09-27T16:36:44.806Z",
   "profilePicture": "/sahil2.jpg",
   "fallbackPictures": [
     "/sahil2.jpg",
@@ -10,41 +10,251 @@
   ],
   "headline": "Final-Year BCA Student @ CGC Landran (8.09 CGPA) | Data Analytics (Python, SQL, Power BI) | AI Automation & Full-Stack Builder (FastAPI, React, n8n)",
   "linkedinSkills": [
-    { "name": "Python (Programming Language)", "category": "Data & Programming", "source": "SortIQ Solutions • Lernx • UniAthena", "verified": true, "level": 92 },
-    { "name": "SQL", "category": "Data & Programming", "source": "SortIQ Solutions • CGC Landran", "verified": true, "level": 88 },
-    { "name": "Pandas (Software)", "category": "Data & Programming", "source": "Uber Ride Bookings Analysis", "verified": true, "level": 90 },
-    { "name": "NumPy", "category": "Data & Programming", "source": "SortIQ 45-Day Summer Training", "verified": true, "level": 88 },
-    { "name": "Seaborn", "category": "Data & Programming", "source": "SortIQ 45-Day Summer Training", "verified": true, "level": 86 },
-    { "name": "Exploratory Data Analysis (EDA)", "category": "Data & Programming", "source": "Deloitte Australia • SortIQ", "verified": true, "level": 90 },
-    { "name": "Data Analysis", "category": "Data & Programming", "source": "Deloitte Australia Job Simulation", "verified": true, "level": 92 },
-    { "name": "Forensic Technology", "category": "Data & Programming", "source": "Deloitte Australia Job Simulation", "verified": true, "level": 85 },
-    { "name": "Data Modeling", "category": "Data & Programming", "source": "Deloitte Australia • Uber Analysis", "verified": true, "level": 86 },
-    { "name": "Microsoft Power BI", "category": "BI & Visualization", "source": "Uber Ride Bookings 5-Page Dashboard", "verified": true, "level": 88 },
-    { "name": "Data Visualization", "category": "BI & Visualization", "source": "Deloitte Australia • SortIQ", "verified": true, "level": 90 },
-    { "name": "Dashboard Creation", "category": "BI & Visualization", "source": "Power BI • MS Excel", "verified": true, "level": 88 },
-    { "name": "Data Storytelling", "category": "BI & Visualization", "source": "CGC Landran • SortIQ", "verified": true, "level": 88 },
-    { "name": "Microsoft Excel (Pivot Tables, Lookups)", "category": "BI & Visualization", "source": "Deloitte Australia • SortIQ", "verified": true, "level": 90 },
-    { "name": "Generative AI", "category": "AI & Automation", "source": "LinkedIn Learning Certified", "verified": true, "level": 90 },
-    { "name": "Generative AI Tools", "category": "AI & Automation", "source": "LinkedIn Learning • be10X", "verified": true, "level": 92 },
-    { "name": "Artificial Intelligence (AI)", "category": "AI & Automation", "source": "LinkedIn Learning Certified", "verified": true, "level": 88 },
-    { "name": "Prompt Engineering", "category": "AI & Automation", "source": "LinkedIn Learning • KAIROS", "verified": true, "level": 90 },
-    { "name": "n8n Workflow Automation", "category": "AI & Automation", "source": "n8n Academy Certified (N8N101)", "verified": true, "level": 88 },
-    { "name": "Retrieval-Augmented Generation (RAG)", "category": "AI & Automation", "source": "KAIROS Major Project", "verified": true, "level": 82 },
-    { "name": "Ollama / Local LLMs", "category": "AI & Automation", "source": "Outreach IQ • KAIROS", "verified": true, "level": 85 },
-    { "name": "PostgreSQL & pgvector", "category": "Web & Engineering", "source": "KAIROS • Outreach IQ", "verified": true, "level": 84 },
-    { "name": "SQLite & MySQL", "category": "Web & Engineering", "source": "Uber Analysis • BCA DBMS", "verified": true, "level": 88 },
-    { "name": "FastAPI", "category": "Web & Engineering", "source": "Outreach IQ Backend", "verified": true, "level": 82 },
-    { "name": "React.js", "category": "Web & Engineering", "source": "Lernx Certified • Outreach IQ", "verified": true, "level": 80 },
-    { "name": "JavaScript & TypeScript", "category": "Web & Engineering", "source": "OneRoadmap • Outreach IQ", "verified": true, "level": 82 },
-    { "name": "HTML5 & CSS3", "category": "Web & Engineering", "source": "OneRoadmap Frontend Certified", "verified": true, "level": 90 },
-    { "name": "Tailwind CSS", "category": "Web & Engineering", "source": "Outreach IQ • Portfolio", "verified": true, "level": 88 },
-    { "name": "Git & GitHub", "category": "Web & Engineering", "source": "Version Control Certified", "verified": true, "level": 90 },
-    { "name": "Docker", "category": "Web & Engineering", "source": "KAIROS • Outreach IQ", "verified": true, "level": 80 },
-    { "name": "C & C++", "category": "Web & Engineering", "source": "CGC Landran BCA", "verified": true, "level": 75 },
-    { "name": "Analytical Thinking & Problem Solving", "category": "Leadership & Soft Skills", "source": "SIH 2025 Internal Round (4th Rank)", "verified": true, "level": 92 },
-    { "name": "Consulting & Data-Driven Decision Making", "category": "Leadership & Soft Skills", "source": "Deloitte Australia Simulation", "verified": true, "level": 88 },
-    { "name": "Leadership & Coordination", "category": "Leadership & Soft Skills", "source": "Research & Innovation Lead (Tech Titans)", "verified": true, "level": 90 },
-    { "name": "Event Management", "category": "Leadership & Soft Skills", "source": "Event Manager — KAIROS & SIH Coordinator", "verified": true, "level": 90 }
+    {
+      "name": "Python (Programming Language)",
+      "category": "Data & Programming",
+      "source": "SortIQ Solutions • Lernx • UniAthena",
+      "verified": true,
+      "level": 92
+    },
+    {
+      "name": "SQL",
+      "category": "Data & Programming",
+      "source": "SortIQ Solutions • CGC Landran",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Pandas (Software)",
+      "category": "Data & Programming",
+      "source": "Uber Ride Bookings Analysis",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "NumPy",
+      "category": "Data & Programming",
+      "source": "SortIQ 45-Day Summer Training",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Seaborn",
+      "category": "Data & Programming",
+      "source": "SortIQ 45-Day Summer Training",
+      "verified": true,
+      "level": 86
+    },
+    {
+      "name": "Exploratory Data Analysis (EDA)",
+      "category": "Data & Programming",
+      "source": "Deloitte Australia • SortIQ",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Data Analysis",
+      "category": "Data & Programming",
+      "source": "Deloitte Australia Job Simulation",
+      "verified": true,
+      "level": 92
+    },
+    {
+      "name": "Forensic Technology",
+      "category": "Data & Programming",
+      "source": "Deloitte Australia Job Simulation",
+      "verified": true,
+      "level": 85
+    },
+    {
+      "name": "Data Modeling",
+      "category": "Data & Programming",
+      "source": "Deloitte Australia • Uber Analysis",
+      "verified": true,
+      "level": 86
+    },
+    {
+      "name": "Microsoft Power BI",
+      "category": "BI & Visualization",
+      "source": "Uber Ride Bookings 5-Page Dashboard",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Data Visualization",
+      "category": "BI & Visualization",
+      "source": "Deloitte Australia • SortIQ",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Dashboard Creation",
+      "category": "BI & Visualization",
+      "source": "Power BI • MS Excel",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Data Storytelling",
+      "category": "BI & Visualization",
+      "source": "CGC Landran • SortIQ",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Microsoft Excel (Pivot Tables, Lookups)",
+      "category": "BI & Visualization",
+      "source": "Deloitte Australia • SortIQ",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Generative AI",
+      "category": "AI & Automation",
+      "source": "LinkedIn Learning Certified",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Generative AI Tools",
+      "category": "AI & Automation",
+      "source": "LinkedIn Learning • be10X",
+      "verified": true,
+      "level": 92
+    },
+    {
+      "name": "Artificial Intelligence (AI)",
+      "category": "AI & Automation",
+      "source": "LinkedIn Learning Certified",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Prompt Engineering",
+      "category": "AI & Automation",
+      "source": "LinkedIn Learning • KAIROS",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "n8n Workflow Automation",
+      "category": "AI & Automation",
+      "source": "n8n Academy Certified (N8N101)",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Retrieval-Augmented Generation (RAG)",
+      "category": "AI & Automation",
+      "source": "KAIROS Major Project",
+      "verified": true,
+      "level": 82
+    },
+    {
+      "name": "Ollama / Local LLMs",
+      "category": "AI & Automation",
+      "source": "Outreach IQ • KAIROS",
+      "verified": true,
+      "level": 85
+    },
+    {
+      "name": "PostgreSQL & pgvector",
+      "category": "Web & Engineering",
+      "source": "KAIROS • Outreach IQ",
+      "verified": true,
+      "level": 84
+    },
+    {
+      "name": "SQLite & MySQL",
+      "category": "Web & Engineering",
+      "source": "Uber Analysis • BCA DBMS",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "FastAPI",
+      "category": "Web & Engineering",
+      "source": "Outreach IQ Backend",
+      "verified": true,
+      "level": 82
+    },
+    {
+      "name": "React.js",
+      "category": "Web & Engineering",
+      "source": "Lernx Certified • Outreach IQ",
+      "verified": true,
+      "level": 80
+    },
+    {
+      "name": "JavaScript & TypeScript",
+      "category": "Web & Engineering",
+      "source": "OneRoadmap • Outreach IQ",
+      "verified": true,
+      "level": 82
+    },
+    {
+      "name": "HTML5 & CSS3",
+      "category": "Web & Engineering",
+      "source": "OneRoadmap Frontend Certified",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Web & Engineering",
+      "source": "Outreach IQ • Portfolio",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Git & GitHub",
+      "category": "Web & Engineering",
+      "source": "Version Control Certified",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Docker",
+      "category": "Web & Engineering",
+      "source": "KAIROS • Outreach IQ",
+      "verified": true,
+      "level": 80
+    },
+    {
+      "name": "C & C++",
+      "category": "Web & Engineering",
+      "source": "CGC Landran BCA",
+      "verified": true,
+      "level": 75
+    },
+    {
+      "name": "Analytical Thinking & Problem Solving",
+      "category": "Leadership & Soft Skills",
+      "source": "SIH 2025 Internal Round (4th Rank)",
+      "verified": true,
+      "level": 92
+    },
+    {
+      "name": "Consulting & Data-Driven Decision Making",
+      "category": "Leadership & Soft Skills",
+      "source": "Deloitte Australia Simulation",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Leadership & Coordination",
+      "category": "Leadership & Soft Skills",
+      "source": "Research & Innovation Lead (Tech Titans)",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Event Management",
+      "category": "Leadership & Soft Skills",
+      "source": "Event Manager — KAIROS & SIH Coordinator",
+      "verified": true,
+      "level": 90
+    }
   ],
   "linkedinCertifications": [
     {
