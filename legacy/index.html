@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Sahil Narula, a 2nd-year BCA student showcasing skills, projects, and achievements">
+    <meta property="og:title" content="Sahil Narula | BCA Student Portfolio | Developer & Learner">
+    <meta property="og:description" content="Professional portfolio showcasing my skills, projects, and journey as a computer applications student">
+    <meta property="og:image" content="https://github.com/chufxyx.png">
+    <meta property="og:url" content="https://chufxyx.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Sahil Narula | BCA Student Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --secondary: #10B981;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+        }
+
+        .dark {
+            --bg: var(--dark);
+            --text: var(--light);
+            --card-bg: #334155;
+        }
+
+        .light {
+            --bg: var(--light);
+            --text: var(--dark);
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s, color 0.3s;
+            padding-top: 64px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 1.5s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .typewriter {
+            min-height: 1.5em;
+        }
+
+        .section {
+            scroll-margin-top: 80px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        html {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="light">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-800 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-xl font-bold text-blue-600 dark:text-blue-400">Sahil Narula</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Projects</a>
+                    <a href="#education" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Education</a>
+                    <a href="#certifications" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Certifications</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none">
+                        <i class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 rounded-md focus:outline-none">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">Education</a>
+                <a href="#certifications" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">Certifications</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700">Contact</a>
+                <div class="px-3 py-2">
+                    <button id="mobile-theme-toggle" class="flex items-center text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-moon mr-2"></i>
+                        <span>Toggle Dark Mode</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-blue-600 dark:text-blue-400">Sahil Narula</span></h1>
+                    <div class="typewriter text-2xl md:text-3xl font-semibold mb-6 text-gray-600 dark:text-gray-400"></div>
+                    <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">Passionate about coding, learning new technologies, and building innovative solutions. Currently pursuing my Bachelor's in Computer Applications.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg">View Projects</a>
+                        <a href="#contact" class="px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-700 transition">Contact Me</a>
+                    </div>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="https://github.com/chufxyx" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition text-2xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/sahilnarula06skn" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition text-2xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/sahilnarula076" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/chufxyx/" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition text-2xl">
+                            <i class="fas fa-code"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-200 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-green-400 blur-md opacity-75 animate-pulse"></div>
+                        <img src="sahil2.jpg" alt="Sahil Narula" class="relative z-10 w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section py-20 bg-gray-100 dark:bg-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">About Me</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">I'm Sahil Narula, a passionate 2nd-year BCA student at Chandigarh College of Engineering and Technology with a strong interest in software development and web technologies. I enjoy solving problems and building applications that make a difference.</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">My journey in programming started with curiosity and has grown into a dedicated pursuit of knowledge and skill development. I'm constantly learning and expanding my expertise in various technologies.</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">When I'm not coding, you can find me solving problems on LeetCode, contributing to open source, or exploring new frameworks and libraries.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="px-4 py-2 bg-blue-100 dark:bg-slate-600 rounded-full text-blue-800 dark:text-blue-200">Web Development</div>
+                        <div class="px-4 py-2 bg-green-100 dark:bg-slate-600 rounded-full text-green-800 dark:text-green-200">Problem Solving</div>
+                        <div class="px-4 py-2 bg-purple-100 dark:bg-slate-600 rounded-full text-purple-800 dark:text-purple-200">Competitive Programming</div>
+                    </div>
+                </div>
+                <div class="animate-fade-in delay-200">
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4">GitHub Profile</h3>
+                        <div id="github-profile" class="flex items-center mb-6">
+                            <img id="github-avatar" src="https://github.com/chufxyx.png" alt="GitHub Avatar" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 id="github-name" class="font-semibold">Sahil Narula</h4>
+                                <p id="github-bio" class="text-gray-600 dark:text-gray-400 text-sm">BCA Student | Developer | Problem Solver</p>
+                                <div class="flex mt-2">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400 mr-4"><i class="fas fa-users mr-1"></i> <span id="github-followers">0</span> followers</span>
+                                    <span class="text-sm text-gray-600 dark:text-gray-400"><i class="fas fa-user-plus mr-1"></i> <span id="github-following">0</span> following</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="github-calendar" class="mb-6">
+                            <p>Loading GitHub contributions...</p>
+                        </div>
+                        <a href="https://github.com/chufxyx" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                            View full GitHub profile <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">My Skills</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Technical Skills -->
+                <div class="animate-fade-in bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-blue-100 dark:bg-slate-700 rounded-lg mr-4">
+                            <i class="fas fa-code text-blue-600 dark:text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Technical Skills</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">HTML/CSS</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">JavaScript</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">Python</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">Java</span>
+                                <span class="text-gray-500">25%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="25%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Tools -->
+                <div class="animate-fade-in delay-100 bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-green-100 dark:bg-slate-700 rounded-lg mr-4">
+                            <i class="fas fa-cogs text-green-600 dark:text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Frameworks & Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">React</span>
+                                <span class="text-gray-500">60%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                                <span class="text-gray-500">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">Node.js</span>
+                                <span class="text-gray-500">70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700 dark:text-gray-300">Git/GitHub</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-slate-600 rounded-full h-2">
+                                <div class="skill-bar h-2 rounded-full" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Problem Solving -->
+                <div class="animate-fade-in delay-200 bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="p-3 bg-purple-100 dark:bg-slate-700 rounded-lg mr-4">
+                            <i class="fas fa-laptop-code text-purple-600 dark:text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Problem Solving</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Data Structures & Algorithms</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-gray-700 dark:text-gray-300">LeetCode Problem Solving</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Competitive Programming</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Optimization Techniques</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Time Complexity Analysis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                            <span class="text-gray-700 dark:text-gray-300">Logical Thinking</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://leetcode.com/u/chufxyx/" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                            View LeetCode Profile <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section py-20 bg-gray-100 dark:bg-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">My Projects</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+            
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be loaded from GitHub API -->
+                <div class="text-center py-8">
+                    <i class="fas fa-spinner fa-spin text-4xl text-gray-400 mb-4"></i>
+                    <p>Loading projects...</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://github.com/chufxyx?tab=repositories" target="_blank" class="inline-flex items-center px-6 py-3 border border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-600 transition">
+                    View All Projects on GitHub <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">Education</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+            
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 dark:bg-slate-600"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-8 md:space-y-16">
+                    <!-- BCA -->
+                    <div class="relative animate-fade-in">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right">
+                                <h3 class="text-xl font-semibold">Bachelor of Computer Applications (BCA)</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Chandigarh College of Engineering and Technology</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-500">2022 - Present</p>
+                            </div>
+                            <div class="hidden md:flex justify-center md:w-1/12">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 border-4 border-white dark:border-slate-800 z-10"></div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg">
+                                    <ul class="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                                        <li>Currently in 2nd year with 7.2 CGPA</li>
+                                        <li>Specializing in Web Development and Database Management</li>
+                                        <li>Coursework includes Data Structures, Algorithms, Web Technologies, DBMS, and Software Engineering</li>
+                                        <li>Active participant in coding competitions and hackathons</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 12th Grade -->
+                    <div class="relative animate-fade-in delay-100">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right order-last">
+                                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg">
+                                    <ul class="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                                        <li>Completed with 7.5 CGPA</li>
+                                        <li>Mathematics and Computer Science as main subjects</li>
+                                        <li>Participated in school science exhibitions and coding workshops</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden md:flex justify-center md:w-1/12">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 border-4 border-white dark:border-slate-800 z-10"></div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                                <h3 class="text-xl font-semibold">Higher Secondary (12th Grade)</h3>
+                                <p class="text-gray-600 dark:text-gray-400">G R G National Girls Senior Secondary School</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-500">2020 - 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 10th Grade -->
+                    <div class="relative animate-fade-in delay-200">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right">
+                                <h3 class="text-xl font-semibold">Secondary School (10th Grade)</h3>
+                                <p class="text-gray-600 dark:text-gray-400">G R G National Girls Senior Secondary School</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-500">2019 - 2020</p>
+                            </div>
+                            <div class="hidden md:flex justify-center md:w-1/12">
+                                <div class="w-6 h-6 rounded-full bg-blue-600 border-4 border-white dark:border-slate-800 z-10"></div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
+                                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg">
+                                    <ul class="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300">
+                                        <li>Completed with 8 CGPA</li>
+                                        <li>First exposure to computer science fundamentals</li>
+                                        <li>Developed interest in programming through school projects</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section py-20 bg-gray-100 dark:bg-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">My Certifications</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Development Certificate -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden animate-fade-in">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="p-3 bg-blue-100 dark:bg-slate-700 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Frontend Development</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Completed comprehensive frontend development certification covering HTML, CSS, JavaScript, and modern frameworks.</p>
+                        <a href="https://oneroadmap.io/skills/frontend/certificate/CERT-1E2170D1" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Python 3 Bootcamp Certificate -->
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden animate-fade-in delay-300">
+    <div class="p-6">
+        <div class="flex items-center mb-4">
+            <div class="p-3 bg-blue-100 dark:bg-slate-700 rounded-lg mr-4">
+                <i class="fas fa-certificate text-blue-600 dark:text-blue-400 text-xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold">Python 3 Bootcamp</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Completed Python 3 Bootcamp from Lernx, covering fundamental to advanced Python concepts.</p>
+        <div class="flex items-center space-x-2">
+            <a href="pythoncertification.png" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                View Certificate <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+            </a>
+            <span class="text-gray-500 text-sm">Issued: Nov 22, 2023</span>
+        </div>
+    </div>
+</div>
+                
+                <!-- Python Programming Certificate -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden animate-fade-in delay-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="p-3 bg-green-100 dark:bg-slate-700 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-green-600 dark:text-green-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Basics of Python</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Certified in Python programming by UniAthena in partnership with Cambridge International Qualifications, UK.</p>
+                        <a href="Sahil_CR641_certificate_240911_180504.pdf" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- React Certificate -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden animate-fade-in delay-200">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="p-3 bg-purple-100 dark:bg-slate-700 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-purple-600 dark:text-purple-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">React For Beginners</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Completed React for Beginners course from Lernx, covering fundamental concepts and practical applications.</p>
+                        <a href="WhatsApp Image 2025-07-19 at 00.23.47_58d087be.jpg" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI Tools Workshop -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-hidden animate-fade-in delay-300">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="p-3 bg-yellow-100 dark:bg-slate-700 rounded-lg mr-4">
+                                <i class="fas fa-certificate text-yellow-600 dark:text-yellow-400 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">ChatGPT & AI Tools</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Completed workshop on ChatGPT and AI Tools conducted by be10X, covering practical applications of AI tools.</p>
+                        <a href="Certificate_240909_135022.pdf" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                            View Certificate <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg">
+                    <i class="fas fa-download mr-2"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">Get In Touch</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="animate-fade-in">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="p-3 bg-blue-100 dark:bg-slate-600 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <a href="mailto:sahilnarula076@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">sahilnarula076@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="p-3 bg-green-100 dark:bg-slate-600 rounded-lg mr-4">
+                                <i class="fas fa-phone-alt text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <a href="tel:+9170567XXXXX" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">+91 70567 XXXXX</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="p-3 bg-purple-100 dark:bg-slate-600 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-purple-600 dark:text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">sirsa, haryana</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/chufxyx" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow hover:bg-gray-100 dark:hover:bg-slate-600 transition">
+                                <i class="fab fa-github text-gray-700 dark:text-gray-300"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/sahilnarula06skn" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow hover:bg-gray-100 dark:hover:bg-slate-600 transition">
+                                <i class="fab fa-linkedin-in text-gray-700 dark:text-gray-300"></i>
+                            </a>
+                            <a href="https://x.com/sahilnarula076" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow hover:bg-gray-100 dark:hover:bg-slate-600 transition">
+                                <i class="fab fa-twitter text-gray-700 dark:text-gray-300"></i>
+                            </a>
+                            <a href="https://www.instagram.com/sahil_narula___?igsh=MWVnaXpsMjF3MDFmaA==" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow hover:bg-gray-100 dark:hover:bg-slate-600 transition">
+                                <i class="fab fa-instagram text-gray-700 dark:text-gray-300"></i>
+                            </a>
+                            <a href="https://leetcode.com/u/chufxyx/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded-full shadow hover:bg-gray-100 dark:hover:bg-slate-600 transition">
+                                <i class="fas fa-code text-gray-700 dark:text-gray-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in delay-200">
+                    <form id="contact-form" class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-slate-700 text-gray-700 dark:text-gray-300" required></textarea>  
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow-lg focus:outline-none">Send Message</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-slate-900 text-white py-6">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">© 2023 Sahil Narula. All rights reserved.</p>
+            <p class="text-sm mt-2">
+              Built with <a href="https://tailwindcss.com" target="_blank" class="text-blue-400 hover:underline">Tailwind CSS</a>
+              and <a href="https://fontawesome.com/" target="_blank" class="text-blue-400 hover:underline">Font Awesome</a>.
+              Portfolio by <a href="https://github.com/chufxyx" target="_blank" class="text-blue-400 hover:underline">Sahil Narula</a>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+     
+    <script>
+      document.body.classList.add('light');
+      document.documentElement.classList.add('light');
+
+      // Override text color for dark mode
+      const style = document.createElement('style');
+      style.innerHTML = `
+        body.dark, .dark {
+          --text: #4B5563 !important; /* Tailwind gray-600 */
+        }
+      `;
+      document.head.appendChild(style);
+        document.addEventListener("DOMContentLoaded", function() {
+            // Theme icon logic
+            function updateThemeIcon() {
+                const isDark = document.body.classList.contains('dark');
+                document.querySelectorAll('#theme-toggle i, #mobile-theme-toggle i').forEach(icon => {
+                    icon.className = isDark
+                        ? "fas fa-sun text-yellow-400"
+                        : "fas fa-moon text-gray-700 dark:text-yellow-300";
+                });
+            }
+            
+            // Theme toggle
+            function setTheme(theme) {
+                document.body.classList.remove('light', 'dark');
+                document.body.classList.add(theme);
+                document.documentElement.classList.remove('light', 'dark');
+                document.documentElement.classList.add(theme);
+                localStorage.setItem('theme', theme);
+                updateThemeIcon();
+            }
+            
+            function toggleTheme() {
+                const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+                setTheme(current === 'dark' ? 'light' : 'dark');
+            }
+            
+            document.getElementById('theme-toggle').onclick = toggleTheme;
+            document.getElementById('mobile-theme-toggle').onclick = toggleTheme;
+            if (localStorage.getItem('theme')) setTheme(localStorage.getItem('theme'));
+            
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').onclick = function() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            };
+            
+            // Typewriter effect
+            var typewriter = new window.Typewriter(document.querySelector('.typewriter'), {
+                loop: true,
+                delay: 60,
+                deleteSpeed: 40,
+            });
+            typewriter
+                .typeString('BCA Student')
+                .pauseFor(1200)
+                .deleteAll()
+                .typeString('Web Developer')
+                .pauseFor(1200)
+                .deleteAll()
+                .typeString('Problem Solver')
+                .pauseFor(1200)
+                .deleteAll()
+                .typeString('Competitive Programmer')
+                .pauseFor(1200)
+                .deleteAll()
+                .start();
+            
+            // Animate skill bars
+            document.querySelectorAll('.skill-bar').forEach(bar => {
+                bar.style.width = bar.getAttribute('data-width');
+            });
+            
+            // GitHub Profile Info
+            fetch('https://api.github.com/users/chufxyx')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('github-avatar').src = data.avatar_url;
+                    document.getElementById('github-name').textContent = data.name || data.login;
+                    document.getElementById('github-bio').textContent = data.bio || 'BCA Student | Developer | Problem Solver';
+                    document.getElementById('github-followers').textContent = data.followers;
+                    document.getElementById('github-following').textContent = data.following;
+                });
+            
+            // GitHub Calendar
+            GitHubCalendar("#github-calendar", "chufxyx", { responsive: true });
+            
+            // GitHub Projects
+            fetch('https://api.github.com/users/chufxyx/repos?sort=updated&per_page=6')
+                .then(res => res.json())
+                .then(repos => {
+                    const container = document.getElementById('projects-container');
+                    container.innerHTML = '';
+                    repos.forEach(repo => {
+                        const card = document.createElement('div');
+                        card.className = "project-card bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 animate-fade-in";
+                        card.innerHTML = `
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a href="${repo.html_url}" target="_blank" class="hover:underline text-blue-600 dark:text-blue-400">${repo.name}</a>
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">${repo.description || 'No description provided.'}</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${repo.language ? `<span class="px-2 py-1 bg-blue-100 dark:bg-slate-700 rounded text-blue-800 dark:text-blue-200 text-xs">${repo.language}</span>` : ''}
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-slate-700 rounded text-gray-800 dark:text-gray-200 text-xs"><i class="fas fa-star mr-1"></i> ${repo.stargazers_count}</span>
+                            </div>
+                            <a href="${repo.html_url}" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline">
+                                View on GitHub <i class="fas fa-external-link-alt ml-1 text-sm"></i>
+                            </a>
+                        `;
+                        container.appendChild(card);
+                    });
+                });
+            
+            // Contact Form (dummy handler)
+            document.getElementById('contact-form').onsubmit = function(e) {
+                e.preventDefault();
+                alert('Thank you for contacting me! I will get back to you soon.');
+                this.reset();
+            };
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "ouJEbqmgCMRWw-o02",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{
+  "linkedinHandle": "sahilnarula06skn",
+  "linkedinUrl": "https://www.linkedin.com/in/sahilnarula06skn/",
+  "githubUsername": "Git-sahilnarula",
+  "lastSynced": "2026-09-27T10:24:00+05:30",
+  "profilePicture": "/sahil2.jpg",
+  "fallbackPictures": [
+    "/sahil2.jpg",
+    "/sahil_portrait.jpg"
+  ],
+  "headline": "Final-Year BCA Student @ CGC Landran (8.09 CGPA) | Data Analytics (Python, SQL, Power BI) | Generative AI & n8n Workflow Automation",
+  "linkedinSkills": [
+    { "name": "Python (Programming Language)", "category": "Data & Programming", "source": "SortIQ Solutions • Lernx • UniAthena", "verified": true, "level": 92 },
+    { "name": "SQL", "category": "Data & Programming", "source": "SortIQ Solutions • CGC Landran", "verified": true, "level": 88 },
+    { "name": "Pandas (Software)", "category": "Data & Programming", "source": "Uber Ride Bookings Analysis", "verified": true, "level": 90 },
+    { "name": "NumPy", "category": "Data & Programming", "source": "SortIQ 45-Day Summer Training", "verified": true, "level": 88 },
+    { "name": "Seaborn", "category": "Data & Programming", "source": "SortIQ 45-Day Summer Training", "verified": true, "level": 86 },
+    { "name": "Exploratory Data Analysis (EDA)", "category": "Data & Programming", "source": "Deloitte Australia • SortIQ", "verified": true, "level": 90 },
+    { "name": "Data Analysis", "category": "Data & Programming", "source": "Deloitte Australia Job Simulation", "verified": true, "level": 92 },
+    { "name": "Forensic Technology", "category": "Data & Programming", "source": "Deloitte Australia Job Simulation", "verified": true, "level": 85 },
+    { "name": "Data Modeling", "category": "Data & Programming", "source": "Deloitte Australia • Uber Analysis", "verified": true, "level": 86 },
+    { "name": "Microsoft Power BI", "category": "BI & Visualization", "source": "Uber Ride Bookings 5-Page Dashboard", "verified": true, "level": 88 },
+    { "name": "Data Visualization", "category": "BI & Visualization", "source": "Deloitte Australia • SortIQ", "verified": true, "level": 90 },
+    { "name": "Dashboard Creation", "category": "BI & Visualization", "source": "Power BI • MS Excel", "verified": true, "level": 88 },
+    { "name": "Data Storytelling", "category": "BI & Visualization", "source": "CGC Landran • SortIQ", "verified": true, "level": 88 },
+    { "name": "Microsoft Excel (Pivot Tables, Lookups)", "category": "BI & Visualization", "source": "Deloitte Australia • SortIQ", "verified": true, "level": 90 },
+    { "name": "Generative AI", "category": "AI & Automation", "source": "LinkedIn Learning Certified", "verified": true, "level": 90 },
+    { "name": "Generative AI Tools", "category": "AI & Automation", "source": "LinkedIn Learning • be10X", "verified": true, "level": 92 },
+    { "name": "Artificial Intelligence (AI)", "category": "AI & Automation", "source": "LinkedIn Learning Certified", "verified": true, "level": 88 },
+    { "name": "Prompt Engineering", "category": "AI & Automation", "source": "LinkedIn Learning • KAIROS", "verified": true, "level": 90 },
+    { "name": "n8n Workflow Automation", "category": "AI & Automation", "source": "n8n Academy Certified (N8N101)", "verified": true, "level": 88 },
+    { "name": "Retrieval-Augmented Generation (RAG)", "category": "AI & Automation", "source": "KAIROS Major Project", "verified": true, "level": 82 },
+    { "name": "Ollama / Local LLMs", "category": "AI & Automation", "source": "Outreach IQ • KAIROS", "verified": true, "level": 85 },
+    { "name": "PostgreSQL & pgvector", "category": "Web & Engineering", "source": "KAIROS • Outreach IQ", "verified": true, "level": 84 },
+    { "name": "SQLite & MySQL", "category": "Web & Engineering", "source": "Uber Analysis • BCA DBMS", "verified": true, "level": 88 },
+    { "name": "FastAPI", "category": "Web & Engineering", "source": "Outreach IQ Backend", "verified": true, "level": 82 },
+    { "name": "React.js", "category": "Web & Engineering", "source": "Lernx Certified • Outreach IQ", "verified": true, "level": 80 },
+    { "name": "JavaScript & TypeScript", "category": "Web & Engineering", "source": "OneRoadmap • Outreach IQ", "verified": true, "level": 82 },
+    { "name": "HTML5 & CSS3", "category": "Web & Engineering", "source": "OneRoadmap Frontend Certified", "verified": true, "level": 90 },
+    { "name": "Tailwind CSS", "category": "Web & Engineering", "source": "Outreach IQ • Portfolio", "verified": true, "level": 88 },
+    { "name": "Git & GitHub", "category": "Web & Engineering", "source": "Version Control Certified", "verified": true, "level": 90 },
+    { "name": "Docker", "category": "Web & Engineering", "source": "KAIROS • Outreach IQ", "verified": true, "level": 80 },
+    { "name": "C & C++", "category": "Web & Engineering", "source": "CGC Landran BCA", "verified": true, "level": 75 },
+    { "name": "Analytical Thinking & Problem Solving", "category": "Leadership & Soft Skills", "source": "SIH 2025 Internal Round (4th Rank)", "verified": true, "level": 92 },
+    { "name": "Consulting & Data-Driven Decision Making", "category": "Leadership & Soft Skills", "source": "Deloitte Australia Simulation", "verified": true, "level": 88 },
+    { "name": "Leadership & Coordination", "category": "Leadership & Soft Skills", "source": "Research & Innovation Lead (Tech Titans)", "verified": true, "level": 90 },
+    { "name": "Event Management", "category": "Leadership & Soft Skills", "source": "Event Manager — KAIROS & SIH Coordinator", "verified": true, "level": 90 }
+  ],
+  "linkedinCertifications": [
+    {
+      "title": "What Is Generative AI?",
+      "issuer": "LinkedIn Learning",
+      "description": "Completed LinkedIn Learning certification covering Generative AI Tools, Artificial Intelligence (AI), and Generative AI workflows (ID: 180b39d4...16de4).",
+      "accent": "blue",
+      "url": "/LinkedIn_Generative_AI_Certificate.pdf",
+      "badge": "Issued: Jul 29, 2026"
+    },
+    {
+      "title": "Data Analytics Job Simulation",
+      "issuer": "Deloitte Australia & Forage",
+      "description": "Completed practical tasks in Data Analysis and Forensic Technology (Enrolment Code: jvyWBJAMhx3aWfYFR | Verification: CecbcqAqYJLYjWEcH).",
+      "accent": "green",
+      "url": "/Deloitte_Data_Analytics_Certificate.pdf",
+      "badge": "Issued: Jul 20, 2026"
+    },
+    {
+      "title": "N8N101: Essentials — Your First Workflows",
+      "issuer": "n8n Academy",
+      "description": "Successfully completed and received a passing grade in n8n Academy Essentials for building automated workflows and AI agent pipelines.",
+      "accent": "purple",
+      "url": "/n8n_N8N101_Certificate.pdf",
+      "verifyUrl": "https://learn.n8n.io/certificates/bee2ad2c85f04c4c809396d2442bba12",
+      "badge": "Issued: Sep 4, 2026"
+    },
+    {
+      "title": "45-Day Data Analyst Summer Training",
+      "issuer": "SortIQ Solutions Pvt. Ltd.",
+      "description": "Completed intensive 45-day summer training executing end-to-end Python (Pandas, NumPy, Seaborn), SQLite, and Power BI analytics on 150K+ Uber bookings.",
+      "accent": "blue",
+      "url": "/Uber_Analysis_Dashboard.pdf",
+      "badge": "Summer 2026"
+    },
+    {
+      "title": "Frontend Development Certification",
+      "issuer": "OneRoadmap (DPIIT-Recognized)",
+      "description": "Completed comprehensive frontend development certification covering HTML5, CSS3, JavaScript, and modern responsive web interfaces.",
+      "accent": "green",
+      "url": "https://oneroadmap.io/skills/frontend/certificate/CERT-1E2170D1",
+      "badge": "ID: CERT-1E2170D1"
+    },
+    {
+      "title": "Python 3 Bootcamp",
+      "issuer": "Lernx",
+      "description": "Completed Python 3 Bootcamp from Lernx, covering core to advanced Python programming, data structures, and scripting.",
+      "accent": "blue",
+      "url": "/pythoncertification.png",
+      "badge": "Issued: Nov 22, 2023"
+    },
+    {
+      "title": "Basics of Python",
+      "issuer": "UniAthena & Cambridge International Qualifications, UK",
+      "description": "Certified in Python programming by UniAthena in partnership with Cambridge International Qualifications, UK.",
+      "accent": "green",
+      "url": "/Sahil_CR641_certificate_240911_180504.pdf",
+      "badge": "Issued: Sep 11, 2024"
+    },
+    {
+      "title": "React For Beginners",
+      "issuer": "Lernx",
+      "description": "Completed React for Beginners course from Lernx, covering component architecture, state management, and modern SPA development.",
+      "accent": "purple",
+      "url": "/WhatsApp Image 2025-07-19 at 00.23.47_58d087be.jpg",
+      "badge": "Verified Certificate"
+    },
+    {
+      "title": "ChatGPT & AI Tools Workshop",
+      "issuer": "be10X",
+      "description": "Completed workshop on ChatGPT and AI productivity tools conducted by be10X, applying generative AI to real-world workflows.",
+      "accent": "yellow",
+      "url": "/Certificate_240909_135022.pdf",
+      "badge": "Issued: Sep 9, 2024"
+    }
+  ]
+}

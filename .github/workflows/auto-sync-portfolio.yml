@@ -1,0 +1,40 @@
+name: Auto-Sync GitHub Projects & LinkedIn Profile
+
+on:
+  schedule:
+    # Runs automatically every 12 hours to sync latest LinkedIn skills, certs, photo & GitHub repos
+    - cron: '0 */12 * * *'
+  workflow_dispatch: # Allows 1-click manual trigger in GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run LinkedIn & GitHub Sync
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          PROXYCURL_API_KEY: ${{ secrets.PROXYCURL_API_KEY }}
+        run: node scripts/sync-linkedin.mjs
+
+      - name: Commit and push if updated
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/linkedin-profile.json
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(sync): auto-update LinkedIn skills, certifications & GitHub metadata"
+            git push
+          else
+            echo "No changes to commit."
+          fi

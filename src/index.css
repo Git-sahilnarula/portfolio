@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base Typography & Layout (#222222 Dark Charcoal on #f5f2eb Soft Beige/Cream)
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f2eb;
+    color: #222222;
+  }
+
+  html.dark {
+    background-color: #181818;
+    color: #f5f2eb;
+  }
+
+  body {
+    /* Offset for the fixed 64px top navigation bar */
+    padding-top: 64px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Offset anchor jumps so section headings aren't hidden behind fixed navbar */
+.section {
+  scroll-margin-top: 80px;
+}
+
+/* ==========================================================================
+   Component Utilities (Skill Progress Bars & Project Cards)
+   ========================================================================== */
+.skill-bar {
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #222222, #55524d);
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dark .skill-bar {
+  background: linear-gradient(90deg, #f5f2eb, #c4baa7);
+}
+
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(34, 34, 34, 0.12);
+}
+
+/* ==========================================================================
+   Custom Charcoal & Soft Beige Scrollbar for the Skills Directory Wheel
+   ========================================================================== */
+.skills-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.skills-scroll::-webkit-scrollbar-track {
+  background: #ece7dd;
+  border-radius: 9999px;
+}
+
+.dark .skills-scroll::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 9999px;
+}
+
+.dark .skills-scroll::-webkit-scrollbar-thumb {
+  background: #d5ccb8;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb:hover {
+  background: #45423d;
+}
