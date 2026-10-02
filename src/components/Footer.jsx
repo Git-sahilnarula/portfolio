@@ -6,7 +6,7 @@
 
 export default function Footer({ personal }) {
   return (
-    <footer className="bg-slate-800 dark:bg-slate-950 text-slate-100 py-6 border-t border-slate-700 dark:border-slate-800">
+    <footer className="bg-charcoal text-offwhite py-8 border-t border-slate-700/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm">
           © {new Date().getFullYear()} {personal.name}. All rights reserved.
@@ -17,7 +17,7 @@ export default function Footer({ personal }) {
             href="https://react.dev"
             target="_blank"
             rel="noreferrer"
-            className="underline hover:text-white"
+            className="underline hover:text-teal-300 transition-colors"
           >
             React
           </a>
@@ -26,7 +26,7 @@ export default function Footer({ personal }) {
             href="https://tailwindcss.com"
             target="_blank"
             rel="noreferrer"
-            className="underline hover:text-white"
+            className="underline hover:text-teal-300 transition-colors"
           >
             Tailwind CSS
           </a>{' '}
@@ -35,7 +35,7 @@ export default function Footer({ personal }) {
             href="https://fontawesome.com/"
             target="_blank"
             rel="noreferrer"
-            className="underline hover:text-white"
+            className="underline hover:text-teal-300 transition-colors"
           >
             Font Awesome
           </a>
@@ -44,7 +44,7 @@ export default function Footer({ personal }) {
             href={`https://github.com/${personal.githubUsername}`}
             target="_blank"
             rel="noreferrer"
-            className="underline hover:text-white"
+            className="underline hover:text-teal-300 transition-colors"
           >
             {personal.name}
           </a>

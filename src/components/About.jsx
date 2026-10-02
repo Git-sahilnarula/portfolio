@@ -67,28 +67,40 @@ export default function About({ about, personal, linkedinSync }) {
 
             {/* Highlight Badges */}
             <div className="flex flex-wrap gap-2.5 mt-6 mb-8">
-              {about.badges.map((badge) => (
-                <span
-                  key={badge.label}
-                  className="px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-slate-200/90 text-slate-800 dark:bg-slate-700 dark:text-slate-100 border border-slate-300 dark:border-slate-600"
-                >
-                  {badge.label}
-                </span>
-              ))}
+              {about.badges.map((badge) => {
+                const isHighlight =
+                  badge.color === 'amber' || badge.label.includes('SIH 2025');
+                return (
+                  <span
+                    key={badge.label}
+                    className={`px-4 py-1.5 rounded-full text-xs md:text-sm font-medium border ${
+                      isHighlight
+                        ? 'bg-copper/10 text-copper border-copper/30 dark:bg-copper/20 dark:text-copper-300 dark:border-copper/40 font-semibold'
+                        : 'bg-slate-200/90 text-slate-800 dark:bg-slate-700 dark:text-slate-100 border-slate-300 dark:border-slate-600'
+                    }`}
+                  >
+                    {badge.label}
+                  </span>
+                );
+              })}
             </div>
 
             {/* Hackathons, Honors & Campus Leadership */}
             {about.leadershipAndHonors && (
               <div className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-5 border border-slate-200 dark:border-slate-700">
                 <h4 className="text-base font-semibold mb-3 flex items-center">
-                  <i className="fas fa-medal text-blue-600 dark:text-blue-300 mr-2"></i>
+                  <i className="fas fa-medal text-copper mr-2"></i>
                   Honors, Hackathons & Leadership
                 </h4>
                 <div className="space-y-3">
                   {about.leadershipAndHonors.map((item) => (
                     <div key={item.title} className="flex items-start">
                       <i
-                        className={`${item.icon} mt-1 mr-3 w-4 text-center text-blue-600 dark:text-blue-300`}
+                        className={`${item.icon} mt-1 mr-3 w-4 text-center ${
+                          item.icon.includes('medal')
+                            ? 'text-copper'
+                            : 'text-teal-600 dark:text-teal-400'
+                        }`}
                       ></i>
                       <div>
                         <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
@@ -111,7 +123,7 @@ export default function About({ about, personal, linkedinSync }) {
             <div className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold flex items-center">
-                  <i className="fab fa-linkedin text-blue-600 dark:text-blue-300 mr-2 text-2xl"></i>
+                  <i className="fab fa-linkedin text-teal-600 dark:text-teal-400 mr-2 text-2xl"></i>
                   LinkedIn Profile
                 </h3>
                 <span className="text-xs px-2.5 py-1 rounded-full bg-slate-200/80 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-mono">
@@ -142,7 +154,7 @@ export default function About({ about, personal, linkedinSync }) {
                   href={personal.linkedinUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-slate-50 dark:bg-slate-100 dark:text-slate-900 text-sm font-medium rounded-lg hover:opacity-90 transition shadow-sm"
+                  className="inline-flex items-center px-4 py-2 bg-teal-600 hover:bg-teal-700 text-offwhite text-sm font-medium rounded-lg transition shadow-sm"
                 >
                   <i className="fab fa-linkedin-in mr-2"></i> Connect on LinkedIn
                 </a>
@@ -198,13 +210,13 @@ export default function About({ about, personal, linkedinSync }) {
                 </div>
               </div>
 
-              {/* Live GitHub Contribution Calendar in Deep Teal (#0D5C63) */}
+              {/* Live GitHub Contribution Calendar in Deep Teal (#2F6F6D) */}
               <div className="mb-4 p-3 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 overflow-x-auto">
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 font-medium">
                   GitHub Contribution Graph
                 </p>
                 <img
-                  src={`https://ghchart.rshah.org/0D5C63/${personal.githubUsername}`}
+                  src={`https://ghchart.rshah.org/2F6F6D/${personal.githubUsername}`}
                   alt={`${personal.githubUsername}'s GitHub Contributions`}
                   className="w-full min-w-[400px]"
                   loading="lazy"
@@ -215,7 +227,7 @@ export default function About({ about, personal, linkedinSync }) {
                 href={`https://github.com/${personal.githubUsername}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center text-blue-600 dark:text-blue-300 hover:underline font-medium text-sm"
+                className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:underline font-medium text-sm"
               >
                 View full GitHub profile{' '}
                 <i className="fas fa-external-link-alt ml-1.5 text-xs"></i>

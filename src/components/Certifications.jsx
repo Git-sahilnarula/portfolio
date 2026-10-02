@@ -178,7 +178,7 @@ export default function Certifications({
             download="Sahil_Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-slate-50 dark:bg-slate-100 dark:text-slate-900 rounded-lg hover:opacity-90 transition shadow-md font-medium"
+            className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-offwhite rounded-lg transition shadow-md font-medium"
           >
             <i className="fas fa-download mr-2"></i> Download Resume
           </a>

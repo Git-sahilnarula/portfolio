@@ -179,7 +179,7 @@ export default function Contact({ personal }) {
                     rel="noreferrer"
                     aria-label={social.name}
                     title={social.name}
-                    className="w-10 h-10 flex items-center justify-center bg-gray-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:-translate-y-1 hover:bg-slate-200/70 dark:hover:bg-slate-700 transition-all duration-200"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-sm hover:-translate-y-1 hover:border-teal-600 hover:text-teal-600 dark:hover:border-teal-400 dark:hover:text-teal-300 transition-all duration-200"
                   >
                     <i
                       className={`${social.icon} text-gray-800 dark:text-gray-200`}
@@ -249,7 +249,7 @@ export default function Contact({ personal }) {
               <button
                 type="submit"
                 disabled={sending}
-                className="w-full px-6 py-3 bg-blue-600 text-slate-50 dark:bg-slate-100 dark:text-slate-900 rounded-lg hover:opacity-90 disabled:opacity-60 transition shadow-md font-medium"
+                className="w-full px-6 py-3 bg-teal-600 hover:bg-teal-700 text-offwhite rounded-lg disabled:opacity-60 transition shadow-md font-medium"
               >
                 {sending ? 'Sending Message...' : 'Send Message'}
               </button>

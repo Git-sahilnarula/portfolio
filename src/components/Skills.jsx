@@ -166,7 +166,7 @@ export default function Skills({ skills, linkedinSync }) {
                 <button
                   type="button"
                   onClick={() => setIsExpanded((prev) => !prev)}
-                  className="px-3 py-2 rounded-lg text-xs font-medium bg-blue-600 text-slate-50 dark:bg-slate-100 dark:text-slate-900 hover:opacity-90 transition inline-flex items-center gap-1.5"
+                  className="px-3 py-2 rounded-lg text-xs font-medium bg-teal-600 hover:bg-teal-700 text-offwhite transition inline-flex items-center gap-1.5"
                 >
                   <span>{isExpanded ? 'Hide' : 'Show'}</span>
                   <i
