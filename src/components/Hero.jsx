@@ -130,14 +130,14 @@ export default function Hero({ personal, linkedinSync }) {
             </div>
           </div>
 
-          {/* Right Column: Circular Profile Photo */}
+          {/* Right Column: Circular Profile Photo with Deep Teal Accent Ring */}
           <div className="animate-fade-in flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-slate-300 dark:bg-slate-700 blur-md opacity-70"></div>
+              <div className="absolute inset-0 rounded-full bg-blue-600/30 dark:bg-blue-400/25 blur-lg opacity-80 animate-pulse"></div>
               <img
                 src={personal.heroImage}
                 alt={personal.name}
-                className="relative z-10 w-full h-full rounded-full object-cover object-top border-4 border-slate-800 dark:border-slate-200 shadow-xl"
+                className="relative z-10 w-full h-full rounded-full object-cover object-top border-4 border-blue-600 dark:border-blue-400 shadow-2xl"
               />
             </div>
           </div>

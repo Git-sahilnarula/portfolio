@@ -14,10 +14,10 @@ A modern, responsive personal portfolio built with **React 18**, **Vite**, and *
 
 ## ✨ Key Features
 
-### 1. Editorial Color System (`#222222` on `#f5f2eb`) & Theme Toggle
-- **Light Mode**: Soft Beige / Cream background (`#f5f2eb`) with warm cream cards (`#faf8f3`) and crisp Dark Charcoal (`#222222`) typography, buttons, and progress bars.
-- **Dark Mode**: Inverted Dark Charcoal (`#181818` / `#222222`) surfaces with Soft Beige (`#f5f2eb`) typography, persisted in `localStorage`.
-- **Interactive Card Micro-Interactions**: Smooth cubic-bezier elevation lift (`translateY(-6px)`), deepened shadow, and border highlight across every card on the site.
+### 1. Tri-Tone Color System (Deep Teal `#0D5C63` & Dark Charcoal `#222222` on Soft Beige `#f5f2eb`)
+- **Light Mode**: Soft Beige / Cream background (`#f5f2eb`) with warm cream cards (`#faf8f3`), authoritative Deep Teal (`#0D5C63`) primary interactive accents/badges/buttons, and Dark Charcoal (`#222222`) typography.
+- **Dark Mode**: Inverted Dark Charcoal (`#181818` / `#222222`) surfaces with luminous teal accents (`#2DD4BF` / `#5EEAD4`) and Soft Beige (`#f5f2eb`) typography, persisted in `localStorage`.
+- **Interactive Card Micro-Interactions**: Smooth cubic-bezier elevation lift (`translateY(-6px)`), deepened shadow, and Deep Teal border highlight across every card on the site.
 
 ### 2. Automated LinkedIn & GitHub Sync Pipeline
 - **Synced LinkedIn Headlines**: Pipe-separated (`|`) segments from the LinkedIn headline automatically drive the Hero badge, animated typewriter effect, and About LinkedIn card.

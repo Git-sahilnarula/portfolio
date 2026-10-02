@@ -198,13 +198,13 @@ export default function About({ about, personal, linkedinSync }) {
                 </div>
               </div>
 
-              {/* Live GitHub Contribution Calendar in Dark Charcoal (#222222) */}
+              {/* Live GitHub Contribution Calendar in Deep Teal (#0D5C63) */}
               <div className="mb-4 p-3 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 overflow-x-auto">
                 <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 font-medium">
                   GitHub Contribution Graph
                 </p>
                 <img
-                  src={`https://ghchart.rshah.org/222222/${personal.githubUsername}`}
+                  src={`https://ghchart.rshah.org/0D5C63/${personal.githubUsername}`}
                   alt={`${personal.githubUsername}'s GitHub Contributions`}
                   className="w-full min-w-[400px]"
                   loading="lazy"
