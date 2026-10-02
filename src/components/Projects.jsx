@@ -238,180 +238,177 @@ export default function Projects({
         {/* Professional Experience & Industrial Training Cards */}
         {experienceAndAchievements?.length > 0 && (
           <div id="experience" className="mt-20 pt-12 border-t border-slate-200 dark:border-slate-700/80 animate-fade-in section">
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <span className="text-xs uppercase tracking-widest font-semibold text-blue-600 dark:text-blue-400 mb-2 block">
-                Work History & Applied Impact
-              </span>
-              <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-800 dark:text-slate-100 mb-3">
-                Professional Experience & Industry Training
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
-                Track record spanning active corporate analytics internships, intensive data pipeline engineering, and global advisory simulations.
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-center mb-4 text-slate-800 dark:text-slate-100">
+              Professional Experience & Industry Training
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 dark:bg-blue-300 mx-auto mb-12"></div>
 
-            <div className="space-y-6">
-              {experienceAndAchievements.map((exp) => (
-                <div
-                  key={exp.role}
-                  className={`hover-card group bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl p-6 sm:p-8 border ${
-                    exp.isCurrent
-                      ? 'border-blue-600/50 dark:border-blue-400/50 ring-1 ring-blue-600/20'
-                      : 'border-slate-200 dark:border-slate-700'
-                  } transition-all duration-300`}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                    {/* Left Column (Meta, Identity, Status, Metric & CTA on Desktop) */}
-                    <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4">
-                      <div>
-                        {/* Company Logo + Org & Type */}
-                        <div className="flex items-start gap-3.5">
-                          {exp.logo && (
-                            <div className="w-14 h-14 rounded-2xl bg-white overflow-hidden shadow-sm ring-1 ring-slate-200 dark:ring-white/10 flex items-center justify-center flex-shrink-0 p-1.5">
-                              <img
-                                src={exp.logo}
-                                alt={exp.organization}
-                                className="w-full h-full object-contain"
-                              />
-                            </div>
-                          )}
-                          <div className="flex-1 min-w-0">
-                            <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-                              {exp.type || 'Experience'}
-                            </span>
-                            <h4 className="text-base font-bold text-slate-800 dark:text-slate-100 leading-snug truncate">
-                              {exp.organization}
-                            </h4>
-                            {exp.location && (
-                              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 flex items-center">
-                                <i className="fas fa-map-marker-alt mr-1.5 text-gray-400 text-[11px]"></i>
-                                <span>{exp.location}</span>
-                              </p>
+            <div className="relative">
+              {/* Center vertical timeline divider (visible on desktop) */}
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-slate-300 dark:bg-slate-700"></div>
+
+              <div className="space-y-8 md:space-y-16">
+                {experienceAndAchievements.map((item, idx) => {
+                  // Alternate left/right column alignment on odd-indexed entries
+                  const isReversed = idx % 2 === 1;
+
+                  return (
+                    <div key={item.role} className="relative animate-fade-in">
+                      <div className="md:flex items-center">
+                        {/* Role, Organization, Location & Period Column */}
+                        <div
+                          className={`md:w-1/2 ${
+                            isReversed
+                              ? 'md:pl-12 md:order-last'
+                              : 'md:pr-12 md:text-right'
+                          }`}
+                        >
+                          <div
+                            className={`flex items-center gap-3 mb-2 ${
+                              isReversed ? 'md:justify-start' : 'md:justify-end'
+                            }`}
+                          >
+                            {item.logo && (
+                              <div
+                                className={`w-11 h-11 rounded-xl bg-white dark:bg-slate-800 p-1.5 shadow-sm ring-1 ring-black/10 dark:ring-white/10 flex items-center justify-center flex-shrink-0 ${
+                                  isReversed ? 'order-first' : 'md:order-last'
+                                }`}
+                              >
+                                <img
+                                  src={item.logo}
+                                  alt={item.organization}
+                                  className="w-full h-full object-contain"
+                                />
+                              </div>
                             )}
+                            <div>
+                              <span className="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 block">
+                                {item.type || 'Experience'}
+                              </span>
+                              <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100 leading-snug">
+                                {item.role}
+                              </h3>
+                            </div>
                           </div>
-                        </div>
 
-                        {/* Role Title & Status */}
-                        <div className="mt-4">
-                          <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                            {exp.role}
-                          </h4>
-                          <div className="flex flex-wrap items-center gap-2 mt-2">
-                            <span
-                              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${
-                                exp.isCurrent
-                                  ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700/60'
-                                  : 'bg-slate-100 text-slate-700 dark:bg-slate-700/70 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50'
+                          <p className="text-base font-semibold text-slate-700 dark:text-slate-300">
+                            {item.organization}
+                          </p>
+
+                          {item.location && (
+                            <p
+                              className={`text-xs text-gray-500 dark:text-gray-400 mt-0.5 flex items-center gap-1 ${
+                                isReversed ? 'md:justify-start' : 'md:justify-end'
                               }`}
                             >
-                              {exp.isCurrent && (
+                              <i className="fas fa-map-marker-alt text-[11px]"></i>
+                              <span>{item.location}</span>
+                            </p>
+                          )}
+
+                          <div
+                            className={`mt-2 flex items-center gap-2 ${
+                              isReversed ? 'md:justify-start' : 'md:justify-end'
+                            }`}
+                          >
+                            <span
+                              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${
+                                item.isCurrent
+                                  ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700/60'
+                                  : 'bg-slate-200/80 text-slate-700 dark:bg-slate-700/70 dark:text-slate-300'
+                              }`}
+                            >
+                              {item.isCurrent && (
                                 <span className="relative flex h-2 w-2">
                                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                                 </span>
                               )}
-                              {exp.period}
+                              {item.period}
                             </span>
-                            {exp.duration && !exp.isCurrent && (
+                            {item.duration && !item.isCurrent && (
                               <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                                • {exp.duration}
+                                • {item.duration}
                               </span>
                             )}
                           </div>
                         </div>
 
-                        {/* Key Metric / Impact Highlight Badge */}
-                        {exp.keyMetric && (
-                          <div className="mt-4 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200/80 dark:border-slate-600/60 flex items-start gap-2.5">
-                            <i
-                              className={`${
-                                exp.metricIcon || 'fas fa-chart-line'
-                              } text-blue-600 dark:text-blue-400 text-sm mt-0.5 flex-shrink-0`}
-                            ></i>
-                            <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 leading-snug">
-                              {exp.keyMetric}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Desktop CTA Link */}
-                      {exp.actionUrl && (
-                        <div className="hidden lg:block pt-2">
-                          <a
-                            href={exp.actionUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-500 shadow-sm transition-all duration-200 hover:-translate-y-0.5"
-                          >
-                            <i className={exp.actionIcon || 'fas fa-external-link-alt'}></i>
-                            <span>{exp.actionText || 'View Deliverable'}</span>
-                          </a>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Right Column (Highlights Deliverables & Skill Chips) */}
-                    <div className="lg:col-span-7 lg:border-l lg:border-slate-200 dark:lg:border-slate-700/80 lg:pl-8 flex flex-col justify-between h-full">
-                      <div>
-                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
-                          <i className="fas fa-list-check text-blue-600 dark:text-blue-400"></i>
-                          <span>Key Deliverables & Applied Scope</span>
+                        {/* Center Timeline Node Dot */}
+                        <div className="hidden md:flex justify-center md:w-1/12">
+                          <div
+                            className={`w-5 h-5 rounded-full border-4 border-slate-50 dark:border-slate-900 z-10 shadow ${
+                              item.isCurrent
+                                ? 'bg-emerald-500 ring-4 ring-emerald-500/20'
+                                : 'bg-blue-600 dark:bg-blue-300'
+                            }`}
+                          ></div>
                         </div>
 
-                        {/* Bullet highlights with stylish icons */}
-                        <ul className="space-y-2.5">
-                          {exp.highlights.map((item, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-start text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"
-                            >
-                              <span className="mt-1 mr-2.5 flex-shrink-0 w-4 h-4 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-[10px]">
-                                <i className="fas fa-check"></i>
-                              </span>
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                        {/* Highlights Card Column */}
+                        <div
+                          className={`md:w-1/2 mt-4 md:mt-0 ${
+                            isReversed ? 'md:pr-12 md:order-first' : 'md:pl-12'
+                          }`}
+                        >
+                          <div className="hover-card bg-gray-50 dark:bg-slate-800 p-6 rounded-xl shadow-md border border-slate-200 dark:border-slate-700">
+                            {item.keyMetric && (
+                              <div className="mb-3 px-3 py-1.5 rounded-lg bg-slate-200/60 dark:bg-slate-700/60 border border-slate-300/70 dark:border-slate-600/70 text-xs font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                                <i
+                                  className={`${
+                                    item.metricIcon || 'fas fa-chart-line'
+                                  } text-blue-600 dark:text-blue-400 text-sm flex-shrink-0`}
+                                ></i>
+                                <span>{item.keyMetric}</span>
+                              </div>
+                            )}
 
-                      {/* Skills & Mobile CTA */}
-                      <div className="mt-5 pt-4 border-t border-slate-200/80 dark:border-slate-700/70">
-                        {exp.skills && (
-                          <div className="flex flex-wrap items-center gap-1.5">
-                            <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mr-1">
-                              Competencies:
-                            </span>
-                            {exp.skills.map((skill) => (
-                              <span
-                                key={skill}
-                                className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-slate-100 dark:bg-slate-700/70 text-slate-700 dark:text-slate-200 border border-slate-200/60 dark:border-slate-600/40"
-                              >
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                        )}
+                            <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                              {item.highlights.map((point, i) => (
+                                <li key={i}>{point}</li>
+                              ))}
+                            </ul>
 
-                        {/* Mobile CTA Link */}
-                        {exp.actionUrl && (
-                          <div className="block lg:hidden mt-4 pt-2">
-                            <a
-                              href={exp.actionUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-500 shadow-sm transition-all duration-200"
-                            >
-                              <i className={exp.actionIcon || 'fas fa-external-link-alt'}></i>
-                              <span>{exp.actionText || 'View Deliverable'}</span>
-                            </a>
+                            {item.skills && (
+                              <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-slate-200 dark:border-slate-700">
+                                {item.skills.map((skill) => (
+                                  <span
+                                    key={skill}
+                                    className="px-2 py-0.5 text-[11px] font-medium rounded bg-slate-200/75 dark:bg-slate-700 text-slate-800 dark:text-slate-200"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+
+                            {item.actionUrl && (
+                              <div className="mt-3.5 pt-2">
+                                <a
+                                  href={item.actionUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="inline-flex items-center text-xs font-semibold text-blue-600 dark:text-blue-300 hover:underline"
+                                >
+                                  <i
+                                    className={`${
+                                      item.actionIcon || 'fas fa-external-link-alt'
+                                    } mr-1.5`}
+                                  ></i>
+                                  {item.actionText || 'View Deliverable'}
+                                  <span aria-hidden="true" className="ml-1">
+                                    &rarr;
+                                  </span>
+                                </a>
+                              </div>
+                            )}
                           </div>
-                        )}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  );
+                })}
+              </div>
             </div>
           </div>
         )}
