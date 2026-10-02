@@ -3,46 +3,25 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   Design Tokens & CSS Variables
-   Palette:
-   - Charcoal Black: #222222 (Foundational dark surface & high-contrast typography)
-   - Deep Teal:      #2F6F6D (Primary Accent: buttons, active links, progress bars, interactive CTAs)
-   - Warm Beige:     #E6D8C5 (Secondary Surface: borders, subtle card backdrops, chip backgrounds)
-   - Muted Copper:   #B66A4A (Secondary Accent: scarce, high-impact highlights, stars, medals, rank markers)
-   - Off White:      #F7F4EF (Foundational light canvas, card background, high-contrast dark text)
-   ========================================================================== */
-:root {
-  --color-charcoal: #222222;
-  --color-teal: #2F6F6D;
-  --color-teal-hover: #265B59;
-  --color-teal-light: #EBF3F3;
-  --color-beige: #E6D8C5;
-  --color-beige-subtle: #F1E9DE;
-  --color-copper: #B66A4A;
-  --color-copper-subtle: #FAF4F1;
-  --color-off-white: #F7F4EF;
-}
-
-/* ==========================================================================
-   Base Typography & Layout
+   Base Typography & Layout (Deep Teal, Charcoal & Soft Beige/Cream)
    ========================================================================== */
 @layer base {
   html {
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
-    background-color: #F7F4EF;
+    background-color: #f5f2eb;
     color: #222222;
   }
 
   html.dark {
     background-color: #181818;
-    color: #F7F4EF;
+    color: #f5f2eb;
   }
 
   body {
     /* Offset for the fixed 64px top navigation bar */
     padding-top: 64px;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -57,45 +36,45 @@
 .skill-bar {
   height: 8px;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #2F6F6D, #4EA09D);
+  background: linear-gradient(90deg, #0D5C63, #33858F);
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .dark .skill-bar {
-  background: linear-gradient(90deg, #3D8280, #6CB3B0);
+  background: linear-gradient(90deg, #2DD4BF, #5EEAD4);
 }
 
-/* Universal interactive card hover effect with Deep Teal accent & subtle Warm Beige border */
+/* Universal interactive card hover effect with Deep Teal accent */
 .hover-card,
 .project-card {
   transition:
-    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.24s ease;
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease;
 }
 
 .hover-card:hover,
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(47, 111, 109, 0.12);
-  border-color: #2F6F6D;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(13, 92, 99, 0.12);
+  border-color: #0D5C63;
 }
 
 .dark .hover-card:hover,
 .dark .project-card:hover {
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.55);
-  border-color: #4EA09D;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+  border-color: #2DD4BF;
 }
 
 /* ==========================================================================
-   Custom Deep Teal & Warm Beige Scrollbar for the Skills Directory Wheel
+   Custom Deep Teal & Soft Beige Scrollbar for the Skills Directory Wheel
    ========================================================================== */
 .skills-scroll::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 
 .skills-scroll::-webkit-scrollbar-track {
-  background: #E6D8C5;
+  background: #ece7dd;
   border-radius: 9999px;
 }
 
@@ -104,14 +83,14 @@
 }
 
 .skills-scroll::-webkit-scrollbar-thumb {
-  background: #2F6F6D;
+  background: #0D5C63;
   border-radius: 9999px;
 }
 
 .dark .skills-scroll::-webkit-scrollbar-thumb {
-  background: #4EA09D;
+  background: #2DD4BF;
 }
 
 .skills-scroll::-webkit-scrollbar-thumb:hover {
-  background: #265B59;
+  background: #0A484E;
 }

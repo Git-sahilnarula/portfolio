@@ -141,22 +141,22 @@ export default function Projects({
                       <span
                         className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${
                           isInDev
-                            ? 'bg-copper/10 text-copper border-copper/30 dark:bg-copper/20 dark:text-copper-300 dark:border-copper/40'
-                            : 'bg-charcoal text-offwhite border-charcoal dark:bg-offwhite dark:text-charcoal dark:border-offwhite'
+                            ? 'bg-amber-100/90 text-amber-900 border-amber-300 dark:bg-amber-900/40 dark:text-amber-200 dark:border-amber-700/70'
+                            : 'bg-slate-800 text-slate-50 border-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:border-slate-100'
                         }`}
                       >
                         <span
                           className={`w-1.5 h-1.5 rounded-full ${
                             isInDev
-                              ? 'bg-copper animate-ping'
-                              : 'bg-offwhite dark:bg-charcoal'
+                              ? 'bg-amber-600 dark:bg-amber-400 animate-ping'
+                              : 'bg-slate-50 dark:bg-slate-900'
                           }`}
                         ></span>
                         {project.phase || 'Completed'}
                       </span>
 
-                      <span className="px-2 py-1 bg-slate-200/70 dark:bg-slate-700 rounded text-gray-800 dark:text-gray-200 text-xs font-medium">
-                        <i className="fas fa-star text-copper mr-1"></i>
+                      <span className="px-2 py-1 bg-slate-200/70 dark:bg-slate-700 rounded text-gray-800 dark:text-gray-200 text-xs">
+                        <i className="fas fa-star text-amber-500 mr-1"></i>
                         {project.stars}
                       </span>
                     </div>
@@ -188,7 +188,7 @@ export default function Projects({
                     ).map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 bg-slate-200/80 dark:bg-slate-700/80 rounded text-slate-800 dark:text-slate-200 text-xs font-medium border border-slate-300/60 dark:border-slate-600/60"
+                        className="px-2.5 py-1 bg-slate-200/75 dark:bg-slate-700 rounded text-slate-800 dark:text-slate-200 text-xs font-medium"
                       >
                         {tag}
                       </span>
@@ -200,7 +200,7 @@ export default function Projects({
                       href={project.html_url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center text-teal-600 dark:text-teal-400 hover:underline text-sm font-medium"
+                      className="inline-flex items-center text-blue-600 dark:text-blue-300 hover:underline text-sm font-medium"
                     >
                       View on GitHub{' '}
                       <i className="fas fa-external-link-alt ml-1.5 text-xs"></i>
@@ -276,7 +276,7 @@ export default function Projects({
             href={`https://github.com/${githubUsername}?tab=repositories`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 border border-charcoal/80 text-charcoal dark:border-beige/80 dark:text-offwhite rounded-lg hover:bg-beige/40 dark:hover:bg-charcoal/60 transition font-medium"
+            className="inline-flex items-center px-6 py-3 border border-slate-800 text-slate-800 dark:border-slate-300 dark:text-slate-200 rounded-lg hover:bg-slate-200/60 dark:hover:bg-slate-700 transition font-medium"
           >
             View All Projects on GitHub{' '}
             <i className="fas fa-external-link-alt ml-2"></i>

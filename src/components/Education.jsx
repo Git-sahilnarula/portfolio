@@ -43,7 +43,7 @@ export default function Education({ education }) {
 
                     {/* Timeline Node Dot */}
                     <div className="hidden md:flex justify-center md:w-1/12">
-                      <div className="w-5 h-5 rounded-full bg-teal-600 dark:bg-teal-400 border-4 border-offwhite dark:border-charcoal ring-2 ring-copper/50 z-10 shadow"></div>
+                      <div className="w-5 h-5 rounded-full bg-blue-600 dark:bg-blue-300 border-4 border-slate-50 dark:border-slate-900 z-10 shadow"></div>
                     </div>
 
                     {/* Highlights Card Column */}

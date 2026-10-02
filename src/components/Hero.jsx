@@ -61,13 +61,13 @@ export default function Hero({ personal, linkedinSync }) {
           {/* Left Column: Highlighted Name, Synced LinkedIn Headlines, Tagline & CTAs */}
           <div className="animate-fade-in">
             <div className="inline-flex items-center px-3 py-1 mb-4 rounded-full text-xs font-semibold bg-slate-200/80 text-slate-800 dark:bg-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
-              <span className="w-2 h-2 rounded-full bg-copper mr-2 animate-ping"></span>
+              <span className="w-2 h-2 rounded-full bg-slate-800 dark:bg-slate-200 mr-2 animate-ping"></span>
               {headlineSegments[0]}
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-slate-800 dark:text-slate-100">
               Hi, I'm{' '}
-              <span className="inline-block px-3 py-0.5 rounded-lg bg-teal-600 text-offwhite shadow-sm">
+              <span className="inline-block px-3 py-0.5 rounded-lg bg-blue-600 text-slate-50 dark:bg-slate-100 dark:text-slate-900 shadow-sm">
                 {personal.name}
               </span>
             </h1>
@@ -91,7 +91,7 @@ export default function Hero({ personal, linkedinSync }) {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#projects"
-                className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-offwhite rounded-lg transition shadow-md font-medium"
+                className="px-6 py-3 bg-blue-600 text-slate-50 dark:bg-slate-100 dark:text-slate-900 rounded-lg hover:opacity-90 transition shadow-md font-medium"
               >
                 View Projects
               </a>
@@ -100,13 +100,13 @@ export default function Hero({ personal, linkedinSync }) {
                 download="Sahil_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="px-6 py-3 bg-charcoal text-offwhite hover:bg-charcoal/85 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border dark:border-slate-700 rounded-lg transition shadow-md font-medium inline-flex items-center"
+                className="px-6 py-3 bg-slate-700 text-slate-50 dark:bg-slate-700 dark:text-slate-100 rounded-lg hover:opacity-90 transition shadow-md font-medium inline-flex items-center"
               >
                 <i className="fas fa-download mr-2"></i> Resume
               </a>
               <a
                 href="#contact"
-                className="px-6 py-3 border border-charcoal/80 text-charcoal dark:border-beige/80 dark:text-offwhite rounded-lg hover:bg-beige/40 dark:hover:bg-charcoal/60 transition font-medium"
+                className="px-6 py-3 border border-slate-800 text-slate-800 dark:border-slate-300 dark:text-slate-200 rounded-lg hover:bg-slate-200/60 dark:hover:bg-slate-800 transition font-medium"
               >
                 Contact Me
               </a>
@@ -122,7 +122,7 @@ export default function Hero({ personal, linkedinSync }) {
                   rel="noreferrer"
                   aria-label={social.name}
                   title={social.name}
-                  className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-300 transition text-2xl"
+                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition text-2xl"
                 >
                   <i className={social.icon}></i>
                 </a>
@@ -133,11 +133,11 @@ export default function Hero({ personal, linkedinSync }) {
           {/* Right Column: Circular Profile Photo with Deep Teal Accent Ring */}
           <div className="animate-fade-in flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-teal-600/25 dark:bg-teal-400/20 blur-lg opacity-80 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full bg-blue-600/30 dark:bg-blue-400/25 blur-lg opacity-80 animate-pulse"></div>
               <img
                 src={personal.heroImage}
                 alt={personal.name}
-                className="relative z-10 w-full h-full rounded-full object-cover object-top border-4 border-teal-600 dark:border-teal-400 shadow-2xl"
+                className="relative z-10 w-full h-full rounded-full object-cover object-top border-4 border-blue-600 dark:border-blue-400 shadow-2xl"
               />
             </div>
           </div>
