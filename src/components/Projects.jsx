@@ -235,35 +235,181 @@ export default function Projects({
           })}
         </div>
 
-        {/* Industrial Training & Virtual Experience Cards */}
+        {/* Professional Experience & Industrial Training Cards */}
         {experienceAndAchievements?.length > 0 && (
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-center mb-8">
-              Training & Virtual Experience
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div id="experience" className="mt-20 pt-12 border-t border-slate-200 dark:border-slate-700/80 animate-fade-in section">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <span className="text-xs uppercase tracking-widest font-semibold text-blue-600 dark:text-blue-400 mb-2 block">
+                Work History & Applied Impact
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-800 dark:text-slate-100 mb-3">
+                Professional Experience & Industry Training
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Track record spanning active corporate analytics internships, intensive data pipeline engineering, and global advisory simulations.
+              </p>
+            </div>
+
+            <div className="space-y-6">
               {experienceAndAchievements.map((exp) => (
                 <div
                   key={exp.role}
-                  className="hover-card bg-gray-50 dark:bg-slate-800 rounded-xl shadow-md p-6 border border-slate-200 dark:border-slate-700"
+                  className={`hover-card group bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl p-6 sm:p-8 border ${
+                    exp.isCurrent
+                      ? 'border-blue-600/50 dark:border-blue-400/50 ring-1 ring-blue-600/20'
+                      : 'border-slate-200 dark:border-slate-700'
+                  } transition-all duration-300`}
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                    <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
-                      {exp.role}
-                    </h4>
-                    <span className="text-xs px-2.5 py-1 rounded-full bg-slate-200/90 text-slate-800 dark:bg-slate-700 dark:text-slate-200 font-medium">
-                      {exp.period}
-                    </span>
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                    {/* Left Column (Meta, Identity, Status, Metric & CTA on Desktop) */}
+                    <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4">
+                      <div>
+                        {/* Company Logo + Org & Type */}
+                        <div className="flex items-start gap-3.5">
+                          {exp.logo && (
+                            <div className="w-14 h-14 rounded-2xl bg-white overflow-hidden shadow-sm ring-1 ring-slate-200 dark:ring-white/10 flex items-center justify-center flex-shrink-0 p-1.5">
+                              <img
+                                src={exp.logo}
+                                alt={exp.organization}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          )}
+                          <div className="flex-1 min-w-0">
+                            <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                              {exp.type || 'Experience'}
+                            </span>
+                            <h4 className="text-base font-bold text-slate-800 dark:text-slate-100 leading-snug truncate">
+                              {exp.organization}
+                            </h4>
+                            {exp.location && (
+                              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 flex items-center">
+                                <i className="fas fa-map-marker-alt mr-1.5 text-gray-400 text-[11px]"></i>
+                                <span>{exp.location}</span>
+                              </p>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Role Title & Status */}
+                        <div className="mt-4">
+                          <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            {exp.role}
+                          </h4>
+                          <div className="flex flex-wrap items-center gap-2 mt-2">
+                            <span
+                              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold ${
+                                exp.isCurrent
+                                  ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700/60'
+                                  : 'bg-slate-100 text-slate-700 dark:bg-slate-700/70 dark:text-slate-300 border border-slate-200/80 dark:border-slate-600/50'
+                              }`}
+                            >
+                              {exp.isCurrent && (
+                                <span className="relative flex h-2 w-2">
+                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                              )}
+                              {exp.period}
+                            </span>
+                            {exp.duration && !exp.isCurrent && (
+                              <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                                • {exp.duration}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Key Metric / Impact Highlight Badge */}
+                        {exp.keyMetric && (
+                          <div className="mt-4 p-3 rounded-xl bg-slate-50 dark:bg-slate-700/40 border border-slate-200/80 dark:border-slate-600/60 flex items-start gap-2.5">
+                            <i
+                              className={`${
+                                exp.metricIcon || 'fas fa-chart-line'
+                              } text-blue-600 dark:text-blue-400 text-sm mt-0.5 flex-shrink-0`}
+                            ></i>
+                            <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 leading-snug">
+                              {exp.keyMetric}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Desktop CTA Link */}
+                      {exp.actionUrl && (
+                        <div className="hidden lg:block pt-2">
+                          <a
+                            href={exp.actionUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-500 shadow-sm transition-all duration-200 hover:-translate-y-0.5"
+                          >
+                            <i className={exp.actionIcon || 'fas fa-external-link-alt'}></i>
+                            <span>{exp.actionText || 'View Deliverable'}</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right Column (Highlights Deliverables & Skill Chips) */}
+                    <div className="lg:col-span-7 lg:border-l lg:border-slate-200 dark:lg:border-slate-700/80 lg:pl-8 flex flex-col justify-between h-full">
+                      <div>
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                          <i className="fas fa-list-check text-blue-600 dark:text-blue-400"></i>
+                          <span>Key Deliverables & Applied Scope</span>
+                        </div>
+
+                        {/* Bullet highlights with stylish icons */}
+                        <ul className="space-y-2.5">
+                          {exp.highlights.map((item, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"
+                            >
+                              <span className="mt-1 mr-2.5 flex-shrink-0 w-4 h-4 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-[10px]">
+                                <i className="fas fa-check"></i>
+                              </span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Skills & Mobile CTA */}
+                      <div className="mt-5 pt-4 border-t border-slate-200/80 dark:border-slate-700/70">
+                        {exp.skills && (
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 mr-1">
+                              Competencies:
+                            </span>
+                            {exp.skills.map((skill) => (
+                              <span
+                                key={skill}
+                                className="px-2.5 py-1 text-[11px] font-medium rounded-md bg-slate-100 dark:bg-slate-700/70 text-slate-700 dark:text-slate-200 border border-slate-200/60 dark:border-slate-600/40"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Mobile CTA Link */}
+                        {exp.actionUrl && (
+                          <div className="block lg:hidden mt-4 pt-2">
+                            <a
+                              href={exp.actionUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-500 shadow-sm transition-all duration-200"
+                            >
+                              <i className={exp.actionIcon || 'fas fa-external-link-alt'}></i>
+                              <span>{exp.actionText || 'View Deliverable'}</span>
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">
-                    <i className="fas fa-building mr-1.5 text-gray-500"></i>
-                    {exp.organization}
-                  </p>
-                  <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                    {exp.highlights.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
                 </div>
               ))}
             </div>

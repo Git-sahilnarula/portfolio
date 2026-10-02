@@ -2,14 +2,49 @@
   "linkedinHandle": "sahilnarula06skn",
   "linkedinUrl": "https://www.linkedin.com/in/sahilnarula06skn/",
   "githubUsername": "Git-sahilnarula",
-  "lastSynced": "2026-10-02T04:38:55.410Z",
+  "lastSynced": "2026-10-02T09:34:34.737Z",
   "profilePicture": "/sahil2.jpg",
   "fallbackPictures": [
     "/sahil2.jpg",
     "/sahil_portrait.jpg"
   ],
-  "headline": "Final-Year BCA Student @ CGC Landran (8.09 CGPA) | Data Analytics (Python, SQL, Power BI) | AI Automation & Full-Stack Builder (FastAPI, React, n8n)",
+  "headline": "Business Data Analyst Intern at Vision Forge | Research & Innovation Lead at Tech Titans | Aspiring Data Scientist | AI & ML • Automation Developer • n8n • Data Analysis",
   "linkedinSkills": [
+    {
+      "name": "KPI Tracking",
+      "category": "Data & Programming",
+      "source": "Business Data Analyst Intern at Vision Forge Labs",
+      "verified": true,
+      "level": 92
+    },
+    {
+      "name": "Data Cleaning",
+      "category": "Data & Programming",
+      "source": "Business Data Analyst Intern at Vision Forge Labs",
+      "verified": true,
+      "level": 94
+    },
+    {
+      "name": "Business Analysis",
+      "category": "Data & Programming",
+      "source": "Business Data Analyst Intern at Vision Forge Labs",
+      "verified": true,
+      "level": 90
+    },
+    {
+      "name": "Market Research",
+      "category": "Leadership & Soft Skills",
+      "source": "Business Data Analyst Intern at Vision Forge Labs",
+      "verified": true,
+      "level": 88
+    },
+    {
+      "name": "Cross-Functional Collaboration",
+      "category": "Leadership & Soft Skills",
+      "source": "Vision Forge Labs • Tech Titans",
+      "verified": true,
+      "level": 90
+    },
     {
       "name": "Python (Programming Language)",
       "category": "Data & Programming",

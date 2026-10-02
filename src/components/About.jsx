@@ -87,13 +87,30 @@ export default function About({ about, personal, linkedinSync }) {
                 <div className="space-y-3">
                   {about.leadershipAndHonors.map((item) => (
                     <div key={item.title} className="flex items-start">
-                      <i
-                        className={`${item.icon} mt-1 mr-3 w-4 text-center text-blue-600 dark:text-blue-300`}
-                      ></i>
+                      {item.logo ? (
+                        <div className="w-6 h-6 rounded-md bg-white overflow-hidden shadow-sm ring-1 ring-black/10 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                          <img
+                            src={item.logo}
+                            alt={item.org}
+                            className="w-full h-full object-contain p-0.5"
+                          />
+                        </div>
+                      ) : (
+                        <i
+                          className={`${item.icon} mt-1 mr-3 w-4 text-center text-blue-600 dark:text-blue-300`}
+                        ></i>
+                      )}
                       <div>
-                        <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
-                          {item.title}
-                        </p>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
+                            {item.title}
+                          </p>
+                          {item.period && (
+                            <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-200/80 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-medium">
+                              {item.period}
+                            </span>
+                          )}
+                        </div>
                         <p className="text-xs text-gray-500 dark:text-gray-400">
                           {item.org}
                         </p>
