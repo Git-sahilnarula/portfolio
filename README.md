@@ -28,13 +28,30 @@ A modern, responsive personal portfolio built with **React 18**, **Vite**, and *
 - Displays **3 Core Competency Progress Cards** alongside an interactive **Complete Skills Directory (35+ skills)**.
 - Equipped with a **Category Filter Dropdown (`<select>`)**, **Show/Hide toggle**, and a custom-styled **Scroll-Wheel container (`max-h-56 overflow-y-auto`)** to keep vertical page height compact.
 
-### 4. App-Icon Certifications Grid
-- Showcases **9 verified certifications** with the **original issuing organization logos** (`LinkedIn Learning`, `Deloitte`, `n8n Academy`, `SortIQ Solutions`, `OneRoadmap`, `Lernx`, `UniAthena / CIQ`, `be10X`) formatted as uniform `48×48` iOS/macOS-style app icons (`public/logos/`), plus direct links to PDF certificates and online verification URLs.
+### 4. Alternating Center-Line Career & Academic Timelines
+- **Professional Experience & Industry Training**: Features an alternating two-column timeline centered on a vertical divider with interactive node dots and live status indicators:
+  - **Vision Forge Labs (Business Data Analyst Intern)**: Active corporate internship with live pulsating emerald beacon, analyzing enterprise telemetry datasets and engineering executive Power BI dashboards.
+  - **SortIQ Solutions Pvt. Ltd. (Data Analyst Trainee)**: Intensive industrial training processing 150,000+ Delhi NCR ride records (₹52M revenue), relational SQLite3 modeling, and a 5-page Power BI BI suite.
+  - **Deloitte Australia (Virtual Experience Trainee)**: Corporate job simulation verified under Deloitte mentorship for forensic technology audits and executive client advisory.
+- **Education Timeline**: Mirroring alternating academic progression covering Bachelor of Computer Applications (BCA) at CGC Landran (8.09 CGPA) and Senior Secondary education.
 
-### 5. 3-Tier Direct Email Delivery (No Third-Party SDK)
+### 5. App-Icon Certifications & Leadership Directory
+- Showcases **9 verified certifications** and leadership honors (**Tech Titans Club Research & Innovation Lead**) with authentic organization logos (`Vision Forge Labs`, `Tech Titans`, `LinkedIn Learning`, `Deloitte`, `n8n Academy`, `SortIQ Solutions`, `OneRoadmap`, `Lernx`, `UniAthena / CIQ`, `be10X`) formatted as uniform `48×48` app icons (`public/logos/`).
+
+### 6. 3-Tier Direct Email Delivery (No Third-Party SDK)
 - **Tier 1 (Primary)**: Sends formatted HTML table emails directly to `sahilnarula076@gmail.com` via the **FormSubmit AJAX API**.
 - **Tier 2 (Secondary)**: Captures submissions in **Netlify Forms** (`data-netlify="true"`).
 - **Tier 3 (Fallback)**: Automatically opens a pre-filled `mailto:` compose window if the user is offline.
+
+---
+
+## 💼 Professional Experience & Corporate Training
+
+| Organization | Role | Period & Mode | Key Scope & Deliverables |
+| :--- | :--- | :---: | :--- |
+| **Vision Forge Labs** | Business Data Analyst Intern | `Oct 2026 – Present` • Remote | Live KPI Telemetry, Power BI Leadership Dashboards, Market Research |
+| **SortIQ Solutions Pvt. Ltd.** | Data Analyst Trainee | `Summer 2026` • 45-Day Intensive | 150K+ Uber Records, ₹52M Revenue, [5-Page Power BI Report (PDF)](./public/Uber_Analysis_Dashboard.pdf) |
+| **Deloitte Australia** (via Forage) | Virtual Experience Trainee | `May 2026 – Jul 2026` • Remote | Forensic Technology Audits, [Verified Credential (PDF)](./public/Deloitte_Data_Analytics_Certificate.pdf) `CecbcqAqYJLYjWEcH` |
 
 ---
 
@@ -61,6 +78,8 @@ portfolio/
 │   └── linkedin-sync.js           # Serverless endpoint for live LinkedIn headline/skills/certs sync
 ├── public/
 │   ├── logos/                     # Original organization logos formatted as app icons
+│   │   ├── visionforge.png        # Vision Forge Labs official logo
+│   │   ├── techtitans.png         # Tech Titans Club official logo
 │   │   ├── linkedin.svg           # LinkedIn Learning official icon
 │   │   ├── deloitte.png           # Deloitte official icon
 │   │   ├── n8n.png                # n8n Academy official icon
